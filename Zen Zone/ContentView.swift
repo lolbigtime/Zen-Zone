@@ -10,42 +10,54 @@ import RiveRuntime
 import CoreData
 
 struct ContentView: View {
-    @AppStorage("selectedTab") var selectedTab: Tab = .chat
+    @AppStorage("selectedTab") var selectedTab: Tab = .home
     @State var isOpen = false
 
     var button = RiveViewModel(fileName: "menu_button", stateMachineName: "State Machine", autoPlay: false)
 
     var body: some View {
         ZStack {
+            
             Color("Background 2").ignoresSafeArea()
-            
-            
-            
+                        
             SideMenu()
                 .opacity(isOpen ? 1 : 0)
                 .offset(x: isOpen ? 0 : -300)
                 .rotation3DEffect(.degrees(isOpen ? 0 : 30), axis: (x: 0, y: 1, z: 0))
-            switch selectedTab {
-            case .chat:
-                RoundedRectangle(cornerRadius: 30)
-                    .offset(x: isOpen ? 265 : 0)
-                    .scaleEffect(isOpen ? 0.9: 1)
-                    .rotation3DEffect(Angle(degrees: isOpen ? 30.0 : 0), axis: (x: 0, y: -1, z: 0))
-                    .ignoresSafeArea()
-            case .search:
-                Text("Hello")
-            case .timer:
-                Text("Hello")
-
-            case .bell:
-                Text("Hello")
-
-            case .user:
-                Text("Hello")
-
+                
+            Group {
+                switch selectedTab {
+                case .home:
+                    HomeView()
+                        .safeAreaInset(edge: .bottom) {
+                            Color.clear.frame(height: 80)
+                        }
+                        .safeAreaInset(edge: .top) {
+                            Color.clear.frame(height: 104)
+                        }
+                        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                        .offset(x: isOpen ? 265 : 0)
+                        .scaleEffect(isOpen ? 0.9: 1)
+                        .rotation3DEffect(Angle(degrees: isOpen ? 30.0 : 0), axis: (x: 0, y: -1, z: 0))
+                        
+                        .ignoresSafeArea()
+                case .search:
+                    Text("Hello")
+                case .timer:
+                    Text("Hello")
+                case .chat:
+                    Text("Hello")
+                case .user:
+                    Text("Hello")
+                }
             }
-            
-            
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: 80)
+            }
+            .safeAreaInset(edge: .top) {
+                Color.clear.frame(height: 104)
+            }
+            .ignoresSafeArea()
                         
             TabBar()
                 .offset(y: -24)

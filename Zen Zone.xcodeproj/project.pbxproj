@@ -34,6 +34,13 @@
 		43272F1829BC8C2900E5CC76 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F1429BC8C2900E5CC76 /* Extensions.swift */; };
 		43272F1929BC8C2900E5CC76 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F1529BC8C2900E5CC76 /* CustomTextField.swift */; };
 		43272F1A29BC8C2900E5CC76 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F1629BC8C2900E5CC76 /* CustomFont.swift */; };
+		43272F1C29BD46BF00E5CC76 /* HCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F1B29BD46BF00E5CC76 /* HCard.swift */; };
+		43272F1E29BD4EE900E5CC76 /* CCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F1D29BD4EE900E5CC76 /* CCard.swift */; };
+		43272F2029BD502900E5CC76 /* ActivityOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F1F29BD502900E5CC76 /* ActivityOption.swift */; };
+		43272F2229BDD7F200E5CC76 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2129BDD7F200E5CC76 /* JournalView.swift */; };
+		43272F2429BDDC7100E5CC76 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2329BDDC7100E5CC76 /* Statistic.swift */; };
+		43272F2629BF01A200E5CC76 /* JCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2529BF01A200E5CC76 /* JCard.swift */; };
+		43272F2829BF027D00E5CC76 /* EntryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2729BF027D00E5CC76 /* EntryItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +72,13 @@
 		43272F1429BC8C2900E5CC76 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		43272F1529BC8C2900E5CC76 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		43272F1629BC8C2900E5CC76 /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		43272F1B29BD46BF00E5CC76 /* HCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCard.swift; sourceTree = "<group>"; };
+		43272F1D29BD4EE900E5CC76 /* CCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCard.swift; sourceTree = "<group>"; };
+		43272F1F29BD502900E5CC76 /* ActivityOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityOption.swift; sourceTree = "<group>"; };
+		43272F2129BDD7F200E5CC76 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		43272F2329BDDC7100E5CC76 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
+		43272F2529BF01A200E5CC76 /* JCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCard.swift; sourceTree = "<group>"; };
+		43272F2729BF027D00E5CC76 /* EntryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +116,7 @@
 				43272ED129B9DD7E00E5CC76 /* Zen_ZoneApp.swift */,
 				43272ED329B9DD7E00E5CC76 /* ContentView.swift */,
 				43272F0029BC854300E5CC76 /* HomeView.swift */,
+				43272F2129BDD7F200E5CC76 /* JournalView.swift */,
 				43272F0229BC86FD00E5CC76 /* CardViews */,
 				43272F0529BC887F00E5CC76 /* Models */,
 				43272EFF29BC851500E5CC76 /* Menus */,
@@ -152,6 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				43272F0329BC870A00E5CC76 /* VCard.swift */,
+				43272F1D29BD4EE900E5CC76 /* CCard.swift */,
+				43272F1B29BD46BF00E5CC76 /* HCard.swift */,
+				43272F2529BF01A200E5CC76 /* JCard.swift */,
 			);
 			path = CardViews;
 			sourceTree = "<group>";
@@ -160,6 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				43272F0629BC895C00E5CC76 /* ActivitySection.swift */,
+				43272F1F29BD502900E5CC76 /* ActivityOption.swift */,
+				43272F2329BDDC7100E5CC76 /* Statistic.swift */,
+				43272F2729BF027D00E5CC76 /* EntryItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,13 +292,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43272F1C29BD46BF00E5CC76 /* HCard.swift in Sources */,
 				43272F1A29BC8C2900E5CC76 /* CustomFont.swift in Sources */,
 				43272F1929BC8C2900E5CC76 /* CustomTextField.swift in Sources */,
+				43272F1E29BD4EE900E5CC76 /* CCard.swift in Sources */,
 				43272F0429BC870A00E5CC76 /* VCard.swift in Sources */,
+				43272F2429BDDC7100E5CC76 /* Statistic.swift in Sources */,
 				43272EDB29B9DD7F00E5CC76 /* Persistence.swift in Sources */,
+				43272F2229BDD7F200E5CC76 /* JournalView.swift in Sources */,
 				43272F0729BC895C00E5CC76 /* ActivitySection.swift in Sources */,
 				43272EFE29BB3BE500E5CC76 /* MenuRow.swift in Sources */,
+				43272F2629BF01A200E5CC76 /* JCard.swift in Sources */,
+				43272F2829BF027D00E5CC76 /* EntryItem.swift in Sources */,
 				43272EDE29B9DD7F00E5CC76 /* Zen_Zone.xcdatamodeld in Sources */,
+				43272F2029BD502900E5CC76 /* ActivityOption.swift in Sources */,
 				43272ED429B9DD7E00E5CC76 /* ContentView.swift in Sources */,
 				43272EF929B9E08C00E5CC76 /* SideMenu.swift in Sources */,
 				43272F1829BC8C2900E5CC76 /* Extensions.swift in Sources */,

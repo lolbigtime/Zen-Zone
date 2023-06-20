@@ -1,5 +1,5 @@
 //
-//  VCard.swift
+//  HCard.swift
 //  Zen Zone
 //
 //  Created by Tai Wong on 3/11/23.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct VCard: View {
+struct HCard: View {
     var activity: activitySection
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(activity.title)
                 .customFont(.title2, fontSize: 24)
-                .frame(maxWidth: 170, alignment: .leading)
+                .frame(maxWidth: 210, alignment: .leading)
             Text(activity.caption)
                 .customFont(.subheadline, fontSize: 15)
                 .opacity(0.7)
@@ -23,7 +23,7 @@ struct VCard: View {
         }
         .foregroundColor(.white)
         .padding(30)
-        .frame(width: 200, height: 240)
+        .frame(width: 300, height: 240)
         .background(.linearGradient(colors: [activity.color, activity.color.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
         .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
         .shadow(color: activity.color.opacity(0.3), radius: 8, x: 0, y: 12)
@@ -36,8 +36,8 @@ struct VCard: View {
     }
 }
 
-struct VCard_Previews: PreviewProvider {
+struct HCard_Previews: PreviewProvider {
     static var previews: some View {
-        VCard(activity: activities[0])
+        HCard(activity: activities[0])
     }
 }

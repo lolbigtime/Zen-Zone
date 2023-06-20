@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CustomFont: ViewModifier {
     var textStyle: TextStyle
+    var fontSize: Int
     
     var name: String {
         switch textStyle {
@@ -22,32 +23,7 @@ struct CustomFont: ViewModifier {
     }
     
     var size: CGFloat {
-        switch textStyle {
-        case .largeTitle:
-            return 34
-        case .title:
-            return 28
-        case .title2:
-            return 24
-        case .title3:
-            return 20
-        case .body:
-            return 17
-        case .headline:
-            return 17
-        case .subheadline:
-            return 15
-        case .subheadline2:
-            return 15
-        case .footnote:
-            return 13
-        case .footnote2:
-            return 13
-        case .caption:
-            return 12
-        case .caption2:
-            return 12
-        }
+        return CGFloat(fontSize)
     }
     
     var relative: Font.TextStyle {
@@ -85,8 +61,8 @@ struct CustomFont: ViewModifier {
 }
 
 extension View {
-    func customFont(_ textStyle: TextStyle) -> some View {
-        modifier(CustomFont(textStyle: textStyle))
+    func customFont(_ textStyle: TextStyle, fontSize: Int) -> some View {
+        modifier(CustomFont(textStyle: textStyle, fontSize: fontSize))
     }
 }
 
