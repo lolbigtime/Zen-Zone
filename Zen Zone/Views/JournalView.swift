@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct JournalView: View {
+    @State var isShowingView = false
     
     var statistics = Statistic(reflections: 5, checkIns: 2, images: 3)
-    
+    @State var entries: [EntryItem] = []
     var body: some View {
         ZStack {
-            Color("Background").ignoresSafeArea()
-            ScrollView {
-                content
+            if isShowingView {
+                CreateEntryView(entry: $entries, isOn: $isShowingView)
+            } else {
+                Color("Background").ignoresSafeArea()
+                ScrollView {
+                    content
+                }
             }
         }
     }
@@ -37,8 +42,11 @@ struct JournalView: View {
                 .padding(.leading, 10)
                 .padding(.trailing, 10)
                 .padding(.top, 15)
-            JCard(entry: jEntries[0])
+            
+            JCard(entry: EntrySection(date: Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now), items: entries))
+
         }
+
     }
     
     var statisticsView: some View {
@@ -54,7 +62,6 @@ struct JournalView: View {
         .padding(15)
         .background(.linearGradient(colors: [.white, .white.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
         .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-        
         .shadow(color: .white.opacity(0.3), radius: 8, x: 0, y: 12)
         .shadow(color: .white.opacity(0.3), radius: 2, x: 0, y: 1)
         
@@ -88,6 +95,7 @@ struct JournalView: View {
     }
     
     var createView: some View {
+        
         HStack() {
             Image(systemName: "plus.circle")
                 .frame(height: 30)
@@ -112,6 +120,11 @@ struct JournalView: View {
         .shadow(color: .indigo.opacity(0.3), radius: 8, x: 0, y: 12)
         .shadow(color: .indigo.opacity(0.3), radius: 2, x: 0, y: 1)
         
+        .onTapGesture {
+            withAnimation {
+                isShowingView.toggle()
+            }
+        }
     }
     var createTextView: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -123,6 +136,7 @@ struct JournalView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 40)
+    
     }
     
 }

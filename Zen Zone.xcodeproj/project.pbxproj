@@ -41,6 +41,9 @@
 		43272F2429BDDC7100E5CC76 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2329BDDC7100E5CC76 /* Statistic.swift */; };
 		43272F2629BF01A200E5CC76 /* JCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2529BF01A200E5CC76 /* JCard.swift */; };
 		43272F2829BF027D00E5CC76 /* EntryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2729BF027D00E5CC76 /* EntryItem.swift */; };
+		4335B2882A41A59400775C17 /* CreateEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335B2872A41A59400775C17 /* CreateEntryView.swift */; };
+		4371498D2A42F6AC00B3C9DE /* SButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371498C2A42F6AC00B3C9DE /* SButtonView.swift */; };
+		437149912A44177D00B3C9DE /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437149902A44177D00B3C9DE /* WaveShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +82,9 @@
 		43272F2329BDDC7100E5CC76 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
 		43272F2529BF01A200E5CC76 /* JCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCard.swift; sourceTree = "<group>"; };
 		43272F2729BF027D00E5CC76 /* EntryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryItem.swift; sourceTree = "<group>"; };
+		4335B2872A41A59400775C17 /* CreateEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEntryView.swift; sourceTree = "<group>"; };
+		4371498C2A42F6AC00B3C9DE /* SButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SButtonView.swift; sourceTree = "<group>"; };
+		437149902A44177D00B3C9DE /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +120,9 @@
 			children = (
 				43272F0F29BC8B1100E5CC76 /* Zen-Zone-Info.plist */,
 				43272ED129B9DD7E00E5CC76 /* Zen_ZoneApp.swift */,
-				43272ED329B9DD7E00E5CC76 /* ContentView.swift */,
-				43272F0029BC854300E5CC76 /* HomeView.swift */,
-				43272F2129BDD7F200E5CC76 /* JournalView.swift */,
+				4371498E2A44171000B3C9DE /* Views */,
 				43272F0229BC86FD00E5CC76 /* CardViews */,
+				4371498F2A44174100B3C9DE /* Geometry */,
 				43272F0529BC887F00E5CC76 /* Models */,
 				43272EFF29BC851500E5CC76 /* Menus */,
 				43272EDA29B9DD7F00E5CC76 /* Persistence.swift */,
@@ -204,6 +209,26 @@
 				43272F1629BC8C2900E5CC76 /* CustomFont.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		4371498E2A44171000B3C9DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43272ED329B9DD7E00E5CC76 /* ContentView.swift */,
+				43272F0029BC854300E5CC76 /* HomeView.swift */,
+				43272F2129BDD7F200E5CC76 /* JournalView.swift */,
+				4335B2872A41A59400775C17 /* CreateEntryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4371498F2A44174100B3C9DE /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				4371498C2A42F6AC00B3C9DE /* SButtonView.swift */,
+				437149902A44177D00B3C9DE /* WaveShape.swift */,
+			);
+			path = Geometry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,8 +328,10 @@
 				43272F0729BC895C00E5CC76 /* ActivitySection.swift in Sources */,
 				43272EFE29BB3BE500E5CC76 /* MenuRow.swift in Sources */,
 				43272F2629BF01A200E5CC76 /* JCard.swift in Sources */,
+				4335B2882A41A59400775C17 /* CreateEntryView.swift in Sources */,
 				43272F2829BF027D00E5CC76 /* EntryItem.swift in Sources */,
 				43272EDE29B9DD7F00E5CC76 /* Zen_Zone.xcdatamodeld in Sources */,
+				4371498D2A42F6AC00B3C9DE /* SButtonView.swift in Sources */,
 				43272F2029BD502900E5CC76 /* ActivityOption.swift in Sources */,
 				43272ED429B9DD7E00E5CC76 /* ContentView.swift in Sources */,
 				43272EF929B9E08C00E5CC76 /* SideMenu.swift in Sources */,
@@ -312,6 +339,7 @@
 				43272F1729BC8C2900E5CC76 /* CustomButton.swift in Sources */,
 				43272F0129BC854300E5CC76 /* HomeView.swift in Sources */,
 				43272ED229B9DD7E00E5CC76 /* Zen_ZoneApp.swift in Sources */,
+				437149912A44177D00B3C9DE /* WaveShape.swift in Sources */,
 				43272EE829B9DED000E5CC76 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

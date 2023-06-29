@@ -23,7 +23,7 @@ struct CCard: View {
                 .shadow(radius: 3)
                 .frame(width: 50, height: 50)
             Text(option.section)
-                .customFont(.footnote	)
+                .customFont(.footnote, fontSize: 12)
         }
         
     }

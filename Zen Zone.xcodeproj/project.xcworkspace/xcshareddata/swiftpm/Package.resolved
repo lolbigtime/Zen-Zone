@@ -3,10 +3,10 @@
     {
       "identity" : "rive-ios",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/rive-app/rive-ios",
+      "location" : "https://github.com/rive-app/rive-ios.git",
       "state" : {
-        "revision" : "58b926cf1935222919d057f8ea5df1cc386e6e38",
-        "version" : "3.1.7"
+        "revision" : "28a9b3fd3ba13096135f4d1dbcc6843e302039dc",
+        "version" : "3.1.12"
       }
     }
   ],
