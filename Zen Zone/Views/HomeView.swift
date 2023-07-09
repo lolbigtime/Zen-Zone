@@ -68,12 +68,9 @@ struct HomeView: View {
                 .padding(20)
                 .padding(.bottom, 10)
             }
-            
-            
-            
         }
     }
-    }
+}
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct JCard: View {
-    var entry: EntrySection
+    @Binding var entry: EntrySection
+    
     var dateComponentsNow = Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now)
     func abMonth(dc: DateComponents) -> String {
         let monthName = DateFormatter().shortMonthSymbols[(dc.month)! - 1]
@@ -22,17 +23,38 @@ struct JCard: View {
     }
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
+        GeometryReader { Geo in
             VStack(alignment: .leading) {
                 headerView
                 
-                ForEach(entry.items) { item in
-                    Text(item.title)
+                VStack {
+                    ForEach(entry.items, id: \.id) { item in
+                        ECard(journalEntry: item)
+                            .frame(width: Geo.size.width-40)
+                            .frame(height: item.type == "photo" ? 280 : 160)
+
+                            .foregroundColor(.white)
+                            .background(.white)
+                            .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                            .shadow(color: .black.opacity(0.3), radius: 8, x: 0, y: 12)
+                            .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
+                            .padding(.vertical, 8)
+                        
+                        
+                    }
+                    
+                    Spacer()
+
                 }
+
+                
+                                                
             }
-            .padding(20)
-            .padding(.bottom, 10)
+            .padding(.all, 20)
+
         }
+        
+        
         
     }
     /*
@@ -46,7 +68,7 @@ struct JCard: View {
         HStack(spacing: 15) {
             dateView
             VStack(alignment: .leading, spacing: 0) {
-                Text("Today")
+                Text(getDateString(from: entry.date))
                     .customFont(.title2, fontSize: 20)
                     .opacity(entry.date == dateComponentsNow ? 1 : 0)
                     .frame(maxHeight: entry.date == dateComponentsNow ? 30 : 0)
@@ -71,11 +93,32 @@ struct JCard: View {
     }
     
     
+    func getDateString(from dateComponents: DateComponents) -> String {
+        let calendar = Calendar.current
+        let date = calendar.date(from: dateComponents) ?? Date()
+        
+        let formatter = DateFormatter()
+        
+        if calendar.isDateInToday(date) {
+            return "Today"
+        } else if calendar.isDateInYesterday(date) {
+            return "Yesterday"
+        } else {
+            return "A few days ago"
+        }
+        
+    }
     
+   
 }
 
 struct JCard_Previews: PreviewProvider {
     static var previews: some View {
-        JCard(entry: jEntries[0])
+        var entryitem = EntryItem(mood: "Great!", activities: ["Coding"], feelings: ["Tired"], title: "Coding baby!!!", notes: "Need to do USACO", type: "text", date: Calendar.current.dateComponents([.year, .month, .weekday, .day, .hour, .minute], from: Date.now))
+        entryitem.image = UIImage(named: "FLL")
+        
+        @State var sect = EntrySection(date: Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now), items: [entryitem], mood: 0, photos: 1, journal: 0)
+        return JCard(entry: $sect)
+        
     }
 }

@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct CreateEntryView: View {
-    @State private var presentStage = 0
+    @State private var presentStage = -1
     
     @State private var selectedCategories: [String] = []
     @State private var selectedFeelings: [String] = []
@@ -16,9 +17,15 @@ struct CreateEntryView: View {
     @State private var notes = "Write some notes..."
     @State private var progress: CGFloat = 0.4
     
-    @Binding var entry: [EntryItem]
+    @State private var photoItem: PhotosPickerItem?
+    @State private var photo: Image?
+    
     @Binding var isOn: Bool
+    
+    @EnvironmentObject var entrySections: SavedEntries
+
     private let currentDate = Date.now
+    
     func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM d, HH:mm"
@@ -78,7 +85,87 @@ struct CreateEntryView: View {
                 .padding(20)
                 
                 if #available(iOS 16.0, *) {
-                    if presentStage == 0 {
+                    if presentStage == -1 {
+                        Text("Choose how you want \n to check in")
+                            .customFont(.title2, fontSize: 24)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
+                            .padding(.bottom, 30)
+                        
+                        VStack(spacing: 20) {
+                            Button(action: {
+                                withAnimation(.easeOut(duration: 0.1)) {
+                                    presentStage = 0
+                                }
+                                
+                            }) {
+                                Text("Mood Check-in")
+                                    .customFont(.title2, fontSize: 20)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.blue)
+                                    .cornerRadius(30)
+                            }
+                            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+                            PhotosPicker("Photo", selection: $photoItem, matching: .images)
+                                .customFont(.title2, fontSize: 20)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.green)
+                                .cornerRadius(30)
+                                .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+                            
+                                .onChange(of: photoItem) { _ in
+                                    Task {
+                                        if let data = try? await photoItem?.loadTransferable(type: Data.self) {
+                                            print(data, "sucess")
+                                            
+                                            if let uiImage = UIImage(data: data) {
+                                                
+                                                
+                                                var entryItem = EntryItem(mood: "", activities: [], feelings: [], title: "", notes: "", type: "photo", date: Calendar.current.dateComponents([.year, .month, .weekday, .day, Calendar.Component.hour, .minute], from: Date.now))
+                                                
+                                                entryItem.image = uiImage
+                                                
+                                                if let matchingIndex = entrySections.entrySections.firstIndex(where: { $0.date == Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now) }) {
+                                                    entrySections.entrySections[matchingIndex].items.append(entryItem)
+                                                    entrySections.entrySections[matchingIndex].photos += 1
+                                                } else {
+                                                    entrySections.entrySections.append(EntrySection(date: Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now), items: [entryItem], mood: 0, photos: 1, journal: 0))
+                                                }
+                                                
+                                                isOn = false
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+
+                            Button(action: {
+                                withAnimation(.easeOut(duration: 0.1)) {
+                                    print(entrySections.entrySections.count)
+                                    print(entrySections.entrySections[0].date)
+                                    print(entrySections.entrySections[0].items.count)
+
+
+                                }
+                                
+                            }) {
+                                Text("Journal Entry")
+                                    .customFont(.title2, fontSize: 20)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.red)
+                                    .cornerRadius(30)
+                            }
+                            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+
+                            
+                        }
+                    } else if presentStage == 0 {
                         Text("Good Morning, John! \n How are you feeling?")
                             .customFont(.title2, fontSize: 24)
                             .multilineTextAlignment(.center)
@@ -450,6 +537,7 @@ struct CreateEntryView: View {
                         .padding()
                         
                         
+                        
                         Button(action: {
                             withAnimation(.easeOut(duration: 0.1)) {
                                 presentStage += 1
@@ -576,8 +664,20 @@ struct CreateEntryView: View {
                                         mood = "Terrible"
                                     }
                                     
-                                    let entryItem = EntryItem(mood: mood, activities: selectedCategories, feelings: selectedFeelings, title: title, notes: notes, type: "text", date: Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now))
-                                    entry.append(entryItem)
+                                    let entryItem = EntryItem(mood: mood, activities: selectedCategories, feelings: selectedFeelings, title: title, notes: notes, type: "text", date: Calendar.current.dateComponents([.year, .month, .weekday, .day, .hour, .minute], from: Date.now))
+                                    //entry.append(entryItem)
+                                    
+                                    if let matchingIndex = entrySections.entrySections.firstIndex(where: { $0.date == Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now) }) {
+                                        entrySections.entrySections[matchingIndex].items.append(entryItem)
+                                        entrySections.entrySections[matchingIndex].mood += 1
+                                    } else {
+                                        entrySections.entrySections.append(EntrySection(date: Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now), items: [entryItem], mood: 1, photos: 0, journal: 0))
+                                        
+                                    }
+                                    
+                                    print(entrySections)
+
+                                    
                                     isOn = false
                                 }
                             }) {
@@ -633,6 +733,14 @@ struct CreateEntryView: View {
         }
     }
     
+    
+    
 }
 
 
+
+struct Previews_CreateEntryView_Previews: PreviewProvider {
+    static var previews: some View {
+        CreateEntryView(isOn: .constant(true))
+    }
+}
