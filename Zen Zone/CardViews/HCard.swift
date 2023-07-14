@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HCard: View {
+    @State private var isPresenting = false
     var activity: activitySection
     
     var body: some View {
@@ -20,24 +21,26 @@ struct HCard: View {
                 .opacity(0.7)
             Text("\(activity.points) Point - \(activity.type) activity")
                 .customFont(.footnote2, fontSize: 13)
+                   }
+            .foregroundColor(.white)
+            .padding(30)
+            .frame(width: 300, height: 240)
+            .background(.linearGradient(colors: [activity.color, activity.color.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
+            .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .shadow(color: activity.color.opacity(0.3), radius: 8, x: 0, y: 12)
+            .shadow(color: activity.color.opacity(0.3), radius: 2, x: 0, y: 1)
+            .overlay(
+                activity.image
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                    .padding(20)
+                
+            )
         }
-        .foregroundColor(.white)
-        .padding(30)
-        .frame(width: 300, height: 240)
-        .background(.linearGradient(colors: [activity.color, activity.color.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
-        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-        .shadow(color: activity.color.opacity(0.3), radius: 8, x: 0, y: 12)
-        .shadow(color: activity.color.opacity(0.3), radius: 2, x: 0, y: 1)
-        .overlay(
-            activity.image
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                .padding(20)
-        )
-    }
 }
-
-struct HCard_Previews: PreviewProvider {
-    static var previews: some View {
-        HCard(activity: activities[0])
+    
+    struct HCard_Previews: PreviewProvider {
+        static var previews: some View {
+            HCard(activity: activities[0])
+        }
     }
-}
+    
