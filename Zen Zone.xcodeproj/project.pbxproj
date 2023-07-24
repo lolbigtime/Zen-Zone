@@ -45,8 +45,6 @@
 		4371498D2A42F6AC00B3C9DE /* SButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371498C2A42F6AC00B3C9DE /* SButtonView.swift */; };
 		437149912A44177D00B3C9DE /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437149902A44177D00B3C9DE /* WaveShape.swift */; };
 		437472A32A56AFFA0008CD6F /* ECard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437472A22A56AFFA0008CD6F /* ECard.swift */; };
-		48B5D1432A60D66600D833F6 /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B5D1422A60D66600D833F6 /* DetailedView.swift */; };
-		48B5D1452A60D8C700D833F6 /* ActivityDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B5D1442A60D8C700D833F6 /* ActivityDetailedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,8 +87,6 @@
 		4371498C2A42F6AC00B3C9DE /* SButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SButtonView.swift; sourceTree = "<group>"; };
 		437149902A44177D00B3C9DE /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
 		437472A22A56AFFA0008CD6F /* ECard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECard.swift; sourceTree = "<group>"; };
-		48B5D1422A60D66600D833F6 /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
-		48B5D1442A60D8C700D833F6 /* ActivityDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +104,7 @@
 		43272EC529B9DD7E00E5CC76 = {
 			isa = PBXGroup;
 			children = (
+				43272F1D29BD4EE900E5CC76 /* CCard.swift */,
 				43272ED029B9DD7E00E5CC76 /* Zen Zone */,
 				43272ECF29B9DD7E00E5CC76 /* Products */,
 			);
@@ -178,11 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				43272F0329BC870A00E5CC76 /* VCard.swift */,
-				43272F1D29BD4EE900E5CC76 /* CCard.swift */,
 				43272F1B29BD46BF00E5CC76 /* HCard.swift */,
 				43272F2529BF01A200E5CC76 /* JCard.swift */,
 				437472A22A56AFFA0008CD6F /* ECard.swift */,
-				48B5D1422A60D66600D833F6 /* DetailedView.swift */,
 			);
 			path = CardViews;
 			sourceTree = "<group>";
@@ -192,7 +187,6 @@
 			children = (
 				43272F0629BC895C00E5CC76 /* ActivitySection.swift */,
 				43272F1F29BD502900E5CC76 /* ActivityOption.swift */,
-				48B5D1442A60D8C700D833F6 /* ActivityDetailedView.swift */,
 				43272F2329BDDC7100E5CC76 /* Statistic.swift */,
 				43272F2729BF027D00E5CC76 /* EntryItem.swift */,
 			);
@@ -332,7 +326,6 @@
 				43272F1E29BD4EE900E5CC76 /* CCard.swift in Sources */,
 				43272F0429BC870A00E5CC76 /* VCard.swift in Sources */,
 				43272F2429BDDC7100E5CC76 /* Statistic.swift in Sources */,
-				48B5D1432A60D66600D833F6 /* DetailedView.swift in Sources */,
 				43272EDB29B9DD7F00E5CC76 /* Persistence.swift in Sources */,
 				43272F2229BDD7F200E5CC76 /* JournalView.swift in Sources */,
 				43272F0729BC895C00E5CC76 /* ActivitySection.swift in Sources */,
@@ -351,7 +344,6 @@
 				43272ED229B9DD7E00E5CC76 /* Zen_ZoneApp.swift in Sources */,
 				437472A32A56AFFA0008CD6F /* ECard.swift in Sources */,
 				437149912A44177D00B3C9DE /* WaveShape.swift in Sources */,
-				48B5D1452A60D8C700D833F6 /* ActivityDetailedView.swift in Sources */,
 				43272EE829B9DED000E5CC76 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

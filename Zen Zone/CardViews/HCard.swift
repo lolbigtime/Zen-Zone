@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HCard: View {
     @State private var isPresenting = false
+    @State private var ButtonTap = false
+    @AppStorage("tapCount") private var tapCount = 0
     var activity: activitySection
     
     var body: some View {
@@ -22,6 +24,45 @@ struct HCard: View {
             Text("\(activity.points) Point - \(activity.type) activity")
                 .customFont(.footnote2, fontSize: 13)
                    }
+        .onTapGesture {
+            isPresenting.toggle()}
+        .fullScreenCover(isPresented: $isPresenting,
+                         onDismiss: didDismiss) {
+            VStack {
+                Text(activity.title)
+                    .foregroundColor( .white)
+                    .font(.bold(.largeTitle)())
+                Spacer()
+                    .frame(maxHeight:30)
+                Text(activity.body)
+                    .font(.body)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: 300)
+                    .padding(.leading, 20)
+                    .padding(.trailing, 20)
+                Spacer()
+                    .frame(maxHeight:30)
+                Text("\(activity.points) Point - \(activity.type) activity")
+                    .customFont(.body, fontSize: 20)
+                Spacer()
+                    .frame(maxHeight:40)
+                Button("Complete"){
+                    tapCount += 1
+                    UserDefaults.standard.set(tapCount, forKey: "Tap")
+                    ButtonTap = true
+                }
+                .disabled(ButtonTap == true)
+                Spacer()
+                    .frame(maxHeight:40)
+                Text("Tap to Close")
+                    .onTapGesture{isPresenting.toggle()}
+            }
+            .foregroundColor(.white)
+            .frame(maxWidth: .infinity,
+                   maxHeight: .infinity)
+            .background(activity.color)
+            .ignoresSafeArea(edges: .all)
+        }
             .foregroundColor(.white)
             .padding(30)
             .frame(width: 300, height: 240)
@@ -35,7 +76,11 @@ struct HCard: View {
                     .padding(20)
                 
             )
+        
         }
+    func didDismiss() {
+        // Handle the dismissing action.
+    }
 }
     
     struct HCard_Previews: PreviewProvider {

@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct HomeView: View {
     var weeklies = activities.filter { $0.type == "Weekly" }
     var dailies = activities.filter { $0.type == "Daily" }
-    var wdetail = details.filter {$0.type == "Weekly"}
-    var ddetail = details.filter {$0.type == "Daily"}
+    @AppStorage("tapCount") private var tapCount = 0
     
     var body: some View {
         ZStack {
@@ -24,6 +24,7 @@ struct HomeView: View {
     
     var content: some View {
         VStack(alignment: .leading, spacing: 0) {
+            Text("Points: \(tapCount)")
             Text("Categories")
                 .customFont(.footnote2, fontSize: 13)
                 .padding(.horizontal, 20)
@@ -43,9 +44,7 @@ struct HomeView: View {
                 .padding(.horizontal, 20)
             ScrollView(.horizontal, showsIndicators: false) {
                 ZStack {
-                    ForEach(weeklies) { activity in HCard(activity: activity)}
-                    ForEach(wdetail) { detail in DetailedView(detail:detail)}
-                }
+                    ForEach(weeklies) { activity in HCard(activity:activity )}                }
                 .padding(.leading, 20)
                 .padding(.bottom, 10)
             }
@@ -57,18 +56,18 @@ struct HomeView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 ZStack {
                     ForEach(dailies) { activity in
-                        VCard(activity: activity)
+                        VCard(activity: activity)}
+                            .padding(20)
+                            .padding(.bottom, 10)
+            
                     }
-                    .padding(20)
-                    .padding(.bottom, 10)
                 }
             }
         }
     }
-}
-        
-        struct HomeView_Previews: PreviewProvider {
-            static var previews: some View {
-                HomeView()
-            }
+    struct HomeView_Previews: PreviewProvider {
+        static var previews: some View {
+            HomeView()
         }
+    }
+
