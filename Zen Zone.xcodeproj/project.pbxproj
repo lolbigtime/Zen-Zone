@@ -45,6 +45,7 @@
 		4371498D2A42F6AC00B3C9DE /* SButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371498C2A42F6AC00B3C9DE /* SButtonView.swift */; };
 		437149912A44177D00B3C9DE /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437149902A44177D00B3C9DE /* WaveShape.swift */; };
 		437472A32A56AFFA0008CD6F /* ECard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437472A22A56AFFA0008CD6F /* ECard.swift */; };
+		438CAD522A72616000B3532B /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438CAD512A72616000B3532B /* ActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		4371498C2A42F6AC00B3C9DE /* SButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SButtonView.swift; sourceTree = "<group>"; };
 		437149902A44177D00B3C9DE /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
 		437472A22A56AFFA0008CD6F /* ECard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECard.swift; sourceTree = "<group>"; };
+		438CAD512A72616000B3532B /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				43272F0029BC854300E5CC76 /* HomeView.swift */,
 				43272F2129BDD7F200E5CC76 /* JournalView.swift */,
 				4335B2872A41A59400775C17 /* CreateEntryView.swift */,
+				438CAD512A72616000B3532B /* ActivityView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				43272F2829BF027D00E5CC76 /* EntryItem.swift in Sources */,
 				43272EDE29B9DD7F00E5CC76 /* Zen_Zone.xcdatamodeld in Sources */,
 				4371498D2A42F6AC00B3C9DE /* SButtonView.swift in Sources */,
+				438CAD522A72616000B3532B /* ActivityView.swift in Sources */,
 				43272F2029BD502900E5CC76 /* ActivityOption.swift in Sources */,
 				43272ED429B9DD7E00E5CC76 /* ContentView.swift in Sources */,
 				43272EF929B9E08C00E5CC76 /* SideMenu.swift in Sources */,

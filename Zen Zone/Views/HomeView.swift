@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct HomeView: View {
-    
     var weeklies = activities.filter { $0.type == "Weekly" }
     var dailies = activities.filter { $0.type == "Daily" }
-    
+    @AppStorage("Points") var points = UserDefaults.standard.integer(forKey: "Points")
     
     var body: some View {
         ZStack {
@@ -22,10 +22,13 @@ struct HomeView: View {
         }
     }
     
-    
-    
     var content: some View {
         VStack(alignment: .leading, spacing: 0) {
+            Text("Points: \(points)")
+                .onAppear {
+                    points = UserDefaults.standard.integer(forKey: "Points")
+                    print(points)
+                }
             Text("Categories")
                 .customFont(.footnote2, fontSize: 13)
                 .padding(.horizontal, 20)
@@ -33,9 +36,7 @@ struct HomeView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(options) { option in
-                        CCard(option: option)
-                    }
+                    ForEach(options) { option in CCard(option: option)}
                 }
                 .padding(.leading, 20)
                 .padding(.bottom, 10)
@@ -47,12 +48,12 @@ struct HomeView: View {
                 .padding(.horizontal, 20)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(weeklies) { activity in
-                        HCard(activity: activity)
-                    }
+                    ForEach(weeklies, id: \.id) { activity in HCard(activity:activity)}
                 }
-                .padding(20)
-                .padding(.bottom, 10)
+                
+                .padding(.top, 10)
+                .padding(.leading, 20)
+                .padding(.bottom, 20)
             }
             
             Text("Daily Activities")
@@ -60,18 +61,17 @@ struct HomeView: View {
                 .padding(.horizontal, 20)
             
             ScrollView(.horizontal, showsIndicators: false) {
-                VStack {
+                HStack {
                     ForEach(dailies) { activity in
-                        VCard(activity: activity)
+                        VCard(activity: activity)}
+                            .padding(20)
+                            .padding(.bottom, 10)
+            
                     }
                 }
-                .padding(20)
-                .padding(.bottom, 10)
             }
         }
     }
-}
-
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
