@@ -104,6 +104,7 @@
 		43272EC529B9DD7E00E5CC76 = {
 			isa = PBXGroup;
 			children = (
+				43272F1D29BD4EE900E5CC76 /* CCard.swift */,
 				43272ED029B9DD7E00E5CC76 /* Zen Zone */,
 				43272ECF29B9DD7E00E5CC76 /* Products */,
 			);
@@ -174,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				43272F0329BC870A00E5CC76 /* VCard.swift */,
-				43272F1D29BD4EE900E5CC76 /* CCard.swift */,
 				43272F1B29BD46BF00E5CC76 /* HCard.swift */,
 				43272F2529BF01A200E5CC76 /* JCard.swift */,
 				437472A22A56AFFA0008CD6F /* ECard.swift */,
