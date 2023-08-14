@@ -11,6 +11,9 @@ import Foundation
 struct HomeView: View {
     var weeklies = activities.filter { $0.type == "Weekly" }
     var dailies = activities.filter { $0.type == "Daily" }
+    
+    var sdailies = stores.filter { $0.type == "Daily"}
+    var sweeklies = stores.filter {$0.type == "Weekly"}
     @AppStorage("Points") var points = UserDefaults.standard.integer(forKey: "Points")
     
     var body: some View {
@@ -64,9 +67,16 @@ struct HomeView: View {
                 HStack {
                     ForEach(dailies) { activity in
                         VCard(activity: activity)}
-                            .padding(20)
-                            .padding(.bottom, 10)
-            
+                    .padding(20)
+                    .padding(.bottom, 10)
+                }
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(sdailies) {activity in
+                        SCard(store: activity)}
+                    .padding(20)
+                    .padding(.bottom, 10)
+                        }
                     }
                 }
             }
