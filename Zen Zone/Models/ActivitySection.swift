@@ -16,6 +16,7 @@ struct activitySection: Identifiable {
     var color: Color
     var image: Image
     var type: String
+    var body: String
 }
 
 var activities = [
