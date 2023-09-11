@@ -11,6 +11,7 @@ import CoreData
 
 struct ContentView: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
+    
     @State var isOpen = false
 
     var button = RiveViewModel(fileName: "menu_button", stateMachineName: "State Machine", autoPlay: false)
@@ -96,6 +97,8 @@ struct ContentView: View {
                     }
                 }
         }
+        
+    
     }
 }
 

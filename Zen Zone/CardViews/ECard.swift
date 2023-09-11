@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct ECard: View {
-    @State var journalEntry: EntryItem
+    @ObservedObject var sectionEntries: SavedEntries
+    @State var isPresented = false
+    
+    var sectionIndex: Int
+    var entryIndex: Int
+    @Binding var refresh: Bool
     
     let rows = [GridItem(.flexible())]
     
@@ -26,9 +31,13 @@ struct ECard: View {
                         .foregroundColor(.black)
                     
                     VStack(alignment: .leading, spacing: 0) {
-                        switch journalEntry.type {
+                        switch sectionEntries.entrySections[sectionIndex].items[entryIndex].type {
                         case "text":
-                            Text(journalEntry.mood)
+                            Text(sectionEntries.entrySections[sectionIndex].items[entryIndex].mood)
+                                .customFont(.title2, fontSize: 18)
+                                .foregroundColor(.black.opacity(0.7))
+                        case "journal":
+                            Text(sectionEntries.entrySections[sectionIndex].items[entryIndex].title)
                                 .customFont(.title2, fontSize: 18)
                                 .foregroundColor(.black.opacity(0.7))
                         default:
@@ -38,22 +47,22 @@ struct ECard: View {
                         }
                         
 
-                        Text(getTimeOfDay(from: journalEntry.date))
+                        Text(getTimeOfDay(from: sectionEntries.entrySections[sectionIndex].items[entryIndex].date))
                             .customFont(.subheadline2, fontSize: 10)
                             .foregroundColor(.black.opacity(0.7))
                     }
                     Spacer()
                 }
                 
-                if journalEntry.type == "photo" {
-                    Image(uiImage: journalEntry.image!)
+                if sectionEntries.entrySections[sectionIndex].items[entryIndex].type == "photo" {
+                    Image(uiImage: sectionEntries.entrySections[sectionIndex].items[entryIndex].image!)
                         .resizable()
                         .frame(width: geometry.size.width - 40, height: 200)
                         .scaledToFill()
-                } else {
+                } else if sectionEntries.entrySections[sectionIndex].items[entryIndex].type == "text" {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(journalEntry.activities, id: \.self) { item in
+                            ForEach(sectionEntries.entrySections[sectionIndex].items[entryIndex].activities, id: \.self) { item in
                                 HStack(alignment: .center) {
                                     Text(item)
                                         .customFont(.title, fontSize: 14)
@@ -69,10 +78,10 @@ struct ECard: View {
                         }
                     }
                     .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
-                    
+                    //force reload, because it isnt counting for te entry iten
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(journalEntry.feelings, id: \.self) { item in
+                            ForEach(sectionEntries.entrySections[sectionIndex].items[entryIndex].feelings, id: \.self) { item in
                                 HStack(alignment: .center) {
                                     Text(item)
                                         .customFont(.title, fontSize: 14)
@@ -88,11 +97,30 @@ struct ECard: View {
                         }
                     }
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+                } else {
+                    Text(sectionEntries.entrySections[sectionIndex].items[entryIndex].notes)
+                        .customFont(.body, fontSize: 16)
+                        .padding(10)
+                        //.fixedSize()
+                        .foregroundColor(.black)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(5)
+                    
+    
                 }
                 
             }
             .padding()
+            .fullScreenCover(isPresented: $isPresented) {
+                EntryView(refresh: $refresh, isOn: $isPresented, savedEntries: sectionEntries, sectionIndex: sectionIndex, itemIndex: entryIndex)
+            }
+            .onTapGesture {
+                withAnimation {
+                    isPresented.toggle()
+                }
+            }
         }
+        
         
        // .padding()
     }
@@ -109,13 +137,14 @@ struct ECard: View {
         return formatter.string(from: date)
     }
 }
-
+/*
 struct ECard_Previews: PreviewProvider {
     static var previews: some View {
-        var entryitem = EntryItem(mood: "Great!", activities: ["Coding"], feelings: ["Tired"], title: "Coding baby!!!", notes: "Need to do USACO", type: "photo", date: Calendar.current.dateComponents([.year, .month, .weekday, .day, .hour, .minute], from: Date.now))
+        var entryitem = EntryItem(mood: "Great!", activities: ["Coding"], feelings: ["Tired"], title: "hello", notes: "ifhihdiuashidhasiudhiasuhdiuashdiusahiudhsaiudhsaiuhdiusahd", type: "journal", date: Calendar.current.dateComponents([.year, .month, .weekday, .day, .hour, .minute], from: Date.now))
         entryitem.image = UIImage(named: "FLL")
         
         return ECard(journalEntry: entryitem)
         
     }
 }
+*/

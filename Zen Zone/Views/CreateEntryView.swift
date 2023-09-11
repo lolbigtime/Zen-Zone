@@ -135,7 +135,7 @@ struct CreateEntryView: View {
                                                 } else {
                                                     entrySections.entrySections.append(EntrySection(date: Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now), items: [entryItem], mood: 0, photos: 1, journal: 0))
                                                 }
-                                                
+                                                entrySections.saveEntrySections()
                                                 isOn = false
                                             }
                                         }
@@ -145,10 +145,7 @@ struct CreateEntryView: View {
 
                             Button(action: {
                                 withAnimation(.easeOut(duration: 0.1)) {
-                                    print(entrySections.entrySections.count)
-                                    print(entrySections.entrySections[0].date)
-                                    print(entrySections.entrySections[0].items.count)
-
+                                    presentStage = 7
 
                                 }
                                 
@@ -677,6 +674,84 @@ struct CreateEntryView: View {
                                     
                                     print(entrySections)
 
+                                    entrySections.saveEntrySections()
+
+                                    isOn = false
+                                }
+                            }) {
+                                Text("Complete Check-In")
+                                    .customFont(.title2, fontSize: 20)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(title == "" ? Color("Background 3") : Color.blue)
+                                    .cornerRadius(30)
+                            }
+                            .padding(40)
+                            .disabled(title == "" ? true : false)
+
+                                                        
+                        }
+                    } else if presentStage == 7 {
+                        ScrollView {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text("Journal for:")
+                                        .customFont(.title2, fontSize: 22)
+                                        .foregroundColor(.white)
+                                    
+                                    Text(formatDate(currentDate))
+                                        .customFont(.title2, fontSize: 26)
+                                        .foregroundColor(.white)
+                                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+                                    
+                                    
+                                    TextField("", text: $title, prompt:
+                                                Text("Write your title here!")
+                                        .foregroundColor(Color.white)
+                                    )
+                                    .bold()
+                                    .padding()
+                                    .background(Color("Background 3"))
+                                    .cornerRadius(10)
+                                    .foregroundColor(Color.white)
+                                    .accentColor(Color.white)
+                                    Spacer()
+                                        .frame(height: 20)
+                                    TextEditor(text: $notes)
+                                        .padding()
+                                        .foregroundColor(.white)
+                                        .frame(height: 225)
+                                        .background(Color("Background 3"))
+                                        .accentColor(Color.white)
+                                        .scrollContentBackground(.hidden)
+                                        .cornerRadius(10)
+                                    
+                                    
+                                }
+                                
+                                Spacer()
+                            }
+                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                            
+                            Button(action: {
+                                withAnimation(.easeOut(duration: 0.1)) {
+                                    presentStage += 1
+                                    
+                                    let entryItem = EntryItem(mood: "", activities: [], feelings: [], title: title, notes: notes, type: "journal", date: Calendar.current.dateComponents([.year, .month, .weekday, .day, .hour, .minute], from: Date.now))
+                                    //entry.append(entryItem)
+                                    
+                                    if let matchingIndex = entrySections.entrySections.firstIndex(where: { $0.date == Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now) }) {
+                                        entrySections.entrySections[matchingIndex].items.append(entryItem)
+                                        entrySections.entrySections[matchingIndex].journal += 1
+                                    } else {
+                                        entrySections.entrySections.append(EntrySection(date: Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now), items: [entryItem], mood: 0, photos: 0, journal: 1))
+                                        
+                                    }
+                                    
+                                    print(entrySections)
+                                    entrySections.saveEntrySections()
+
                                     
                                     isOn = false
                                 }
@@ -694,6 +769,7 @@ struct CreateEntryView: View {
 
                                                         
                         }
+                                
                     }
                 }
                                 
@@ -707,6 +783,7 @@ struct CreateEntryView: View {
     var XButton: some View {
         Button(action: {
             isOn = false
+            
         }) {
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
@@ -721,7 +798,11 @@ struct CreateEntryView: View {
     var BButton: some View {
         Button(action: {
             withAnimation(.easeOut(duration: 0.1)) {
-                presentStage -= 1
+                if presentStage == 7 {
+                    presentStage = 1
+                } else {
+                    presentStage -= 1
+                }
             }
         }) {
             ZStack {

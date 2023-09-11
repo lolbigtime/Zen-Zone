@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct JCard: View {
-    @Binding var entry: EntrySection
+    @ObservedObject var savedEntries: SavedEntries
+    var sectionIndex: Int
+    @Binding var refresh: Bool
+
+    
     
     var dateComponentsNow = Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now)
     func abMonth(dc: DateComponents) -> String {
@@ -28,10 +32,11 @@ struct JCard: View {
                 headerView
                 
                 VStack {
-                    ForEach(entry.items, id: \.id) { item in
-                        ECard(journalEntry: item)
+                    
+                    ForEach(savedEntries.entrySections[sectionIndex].items, id: \.id) { item in
+                        ECard(sectionEntries: savedEntries, sectionIndex: sectionIndex, entryIndex: savedEntries.entrySections[sectionIndex].items.firstIndex(where: { $0.id == item.id })!, refresh: $refresh)
                             .frame(width: Geo.size.width-40)
-                            .frame(height: item.type == "photo" ? 280 : 160)
+                            .frame(height: item.type == "photo" ? 280 : item.type == "journal" ? 240 : 160)
 
                             .foregroundColor(.white)
                             .background(.white)
@@ -46,33 +51,20 @@ struct JCard: View {
                     Spacer()
 
                 }
-
-                
-                                                
             }
             .padding(.all, 20)
-
-        }
-        
-        
-        
-    }
-    /*
-    var contentView: some View {
-        HStack {
-            Image
         }
     }
-     */
+    
     var headerView: some View {
         HStack(spacing: 15) {
             dateView
             VStack(alignment: .leading, spacing: 0) {
-                Text(getDateString(from: entry.date))
+                Text(getDateString(from: savedEntries.entrySections[sectionIndex].date))
                     .customFont(.title2, fontSize: 20)
-                    .opacity(entry.date == dateComponentsNow ? 1 : 0)
-                    .frame(maxHeight: entry.date == dateComponentsNow ? 30 : 0)
-                Text(abDay(dc: entry.date))
+                    .opacity(savedEntries.entrySections[sectionIndex].date == dateComponentsNow ? 1 : 0)
+                    .frame(maxHeight: savedEntries.entrySections[sectionIndex].date == dateComponentsNow ? 30 : 0)
+                Text(abDay(dc: savedEntries.entrySections[sectionIndex].date))
                     .customFont(.subheadline2, fontSize: 10)
                     .foregroundColor(.black.opacity(0.7))
             }
@@ -80,9 +72,9 @@ struct JCard: View {
     }
     var dateView: some View {
         VStack {
-            Text(String(entry.date.day ?? 0))
+            Text(String(savedEntries.entrySections[sectionIndex].date.day ?? 0))
                 .customFont(.subheadline2, fontSize: 15)
-            Text(abMonth(dc: entry.date))
+            Text(abMonth(dc: savedEntries.entrySections[sectionIndex].date))
                 .customFont(.body, fontSize: 12)
                 .foregroundColor(.gray)
         }
@@ -112,13 +104,4 @@ struct JCard: View {
    
 }
 
-struct JCard_Previews: PreviewProvider {
-    static var previews: some View {
-        var entryitem = EntryItem(mood: "Great!", activities: ["Coding"], feelings: ["Tired"], title: "Coding baby!!!", notes: "Need to do USACO", type: "text", date: Calendar.current.dateComponents([.year, .month, .weekday, .day, .hour, .minute], from: Date.now))
-        entryitem.image = UIImage(named: "FLL")
-        
-        @State var sect = EntrySection(date: Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now), items: [entryitem], mood: 0, photos: 1, journal: 0)
-        return JCard(entry: $sect)
-        
-    }
-}
+

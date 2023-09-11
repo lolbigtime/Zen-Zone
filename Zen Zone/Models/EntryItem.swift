@@ -84,6 +84,7 @@ class SavedEntries: ObservableObject {
         do {
             let decodedSections = try JSONDecoder().decode([EntrySection].self, from: data)
             entrySections = decodedSections
+            
         } catch {
             print("Failed to decode and load entry sections: \(error.localizedDescription)")
         }
