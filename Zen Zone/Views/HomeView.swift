@@ -24,11 +24,19 @@ struct HomeView: View {
     
     var content: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Points: \(points)")
-                .onAppear {
-                    points = UserDefaults.standard.integer(forKey: "Points")
-                    print(points)
-                }
+            HStack {
+                Spacer()
+                Text("Drops: \(points)")
+                    .customFont(.title2, fontSize: 12)
+                    .onAppear {
+                        points = UserDefaults.standard.integer(forKey: "Points")
+                        print(points)
+                    }
+                Image(systemName: "drop.halffull")
+
+            }
+            .padding(.trailing, 20)
+            
             Text("Categories")
                 .customFont(.footnote2, fontSize: 13)
                 .padding(.horizontal, 20)
@@ -62,7 +70,7 @@ struct HomeView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(dailies) { activity in
+                    ForEach(dailies, id: \.id) { activity in
                         VCard(activity: activity)}
                             .padding(20)
                             .padding(.bottom, 10)

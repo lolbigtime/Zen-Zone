@@ -18,3 +18,4 @@ struct Zen_ZoneApp: App {
         }
     }
 }
+//AI Chat / Direct chat to suicide hotline

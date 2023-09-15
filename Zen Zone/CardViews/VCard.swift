@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct VCard: View {
+    @State private var isPresenting = false
+
     var activity: activitySection
     
     var body: some View {
@@ -21,6 +23,9 @@ struct VCard: View {
             Text("\(activity.points) Point - \(activity.type) activity")
                 .customFont(.footnote2, fontSize: 13)
         }
+        .onTapGesture {
+            isPresenting.toggle()
+        }
         .foregroundColor(.white)
         .padding(30)
         .frame(width: 200, height: 240)
@@ -31,8 +36,12 @@ struct VCard: View {
         .overlay(
             activity.image
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                .foregroundColor(.white)
                 .padding(20)
         )
+        .fullScreenCover(isPresented: $isPresenting) {
+            ActivityView(activity: activity, isPresenting: $isPresenting)
+        }
     }
 }
 

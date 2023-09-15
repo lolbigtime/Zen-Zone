@@ -36,6 +36,7 @@ struct HCard: View {
         .overlay(
             activity.image
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                .foregroundColor(.white)
                 .padding(20)
             
         )
