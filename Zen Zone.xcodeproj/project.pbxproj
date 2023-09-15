@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430286A72AB05CF20068AE30 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430286A62AB05CF20068AE30 /* ChatView.swift */; };
+		430286A92AB065E90068AE30 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430286A82AB065E90068AE30 /* Message.swift */; };
+		430286AB2AB067950068AE30 /* MCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430286AA2AB067950068AE30 /* MCard.swift */; };
+		430286AD2AB1B5FB0068AE30 /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430286AC2AB1B5FB0068AE30 /* UIComponents.swift */; };
+		430286AF2AB373CC0068AE30 /* DotLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430286AE2AB373CC0068AE30 /* DotLoadingView.swift */; };
 		43272ED229B9DD7E00E5CC76 /* Zen_ZoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272ED129B9DD7E00E5CC76 /* Zen_ZoneApp.swift */; };
 		43272ED429B9DD7E00E5CC76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272ED329B9DD7E00E5CC76 /* ContentView.swift */; };
 		43272ED629B9DD7F00E5CC76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43272ED529B9DD7F00E5CC76 /* Assets.xcassets */; };
@@ -50,6 +55,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		430286A62AB05CF20068AE30 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		430286A82AB065E90068AE30 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		430286AA2AB067950068AE30 /* MCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCard.swift; sourceTree = "<group>"; };
+		430286AC2AB1B5FB0068AE30 /* UIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
+		430286AE2AB373CC0068AE30 /* DotLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotLoadingView.swift; sourceTree = "<group>"; };
 		43272ECE29B9DD7E00E5CC76 /* Zen Zone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zen Zone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43272ED129B9DD7E00E5CC76 /* Zen_ZoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zen_ZoneApp.swift; sourceTree = "<group>"; };
 		43272ED329B9DD7E00E5CC76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -182,6 +192,7 @@
 				43272F1B29BD46BF00E5CC76 /* HCard.swift */,
 				43272F2529BF01A200E5CC76 /* JCard.swift */,
 				437472A22A56AFFA0008CD6F /* ECard.swift */,
+				430286AA2AB067950068AE30 /* MCard.swift */,
 			);
 			path = CardViews;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 				43272F1F29BD502900E5CC76 /* ActivityOption.swift */,
 				43272F2329BDDC7100E5CC76 /* Statistic.swift */,
 				43272F2729BF027D00E5CC76 /* EntryItem.swift */,
+				430286A82AB065E90068AE30 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,6 +226,7 @@
 				43272F1429BC8C2900E5CC76 /* Extensions.swift */,
 				43272F1529BC8C2900E5CC76 /* CustomTextField.swift */,
 				43272F1629BC8C2900E5CC76 /* CustomFont.swift */,
+				430286AC2AB1B5FB0068AE30 /* UIComponents.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -227,6 +240,7 @@
 				4335B2872A41A59400775C17 /* CreateEntryView.swift */,
 				438CAD512A72616000B3532B /* ActivityView.swift */,
 				435CBD062AA71DEF00B1BA7D /* EntryView.swift */,
+				430286A62AB05CF20068AE30 /* ChatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +250,7 @@
 			children = (
 				4371498C2A42F6AC00B3C9DE /* SButtonView.swift */,
 				437149902A44177D00B3C9DE /* WaveShape.swift */,
+				430286AE2AB373CC0068AE30 /* DotLoadingView.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -330,6 +345,8 @@
 				43272F1A29BC8C2900E5CC76 /* CustomFont.swift in Sources */,
 				43272F1929BC8C2900E5CC76 /* CustomTextField.swift in Sources */,
 				43272F1E29BD4EE900E5CC76 /* CCard.swift in Sources */,
+				430286A92AB065E90068AE30 /* Message.swift in Sources */,
+				430286A72AB05CF20068AE30 /* ChatView.swift in Sources */,
 				43272F0429BC870A00E5CC76 /* VCard.swift in Sources */,
 				43272F2429BDDC7100E5CC76 /* Statistic.swift in Sources */,
 				43272EDB29B9DD7F00E5CC76 /* Persistence.swift in Sources */,
@@ -339,8 +356,10 @@
 				43272F2629BF01A200E5CC76 /* JCard.swift in Sources */,
 				4335B2882A41A59400775C17 /* CreateEntryView.swift in Sources */,
 				43272F2829BF027D00E5CC76 /* EntryItem.swift in Sources */,
+				430286AF2AB373CC0068AE30 /* DotLoadingView.swift in Sources */,
 				43272EDE29B9DD7F00E5CC76 /* Zen_Zone.xcdatamodeld in Sources */,
 				4371498D2A42F6AC00B3C9DE /* SButtonView.swift in Sources */,
+				430286AB2AB067950068AE30 /* MCard.swift in Sources */,
 				438CAD522A72616000B3532B /* ActivityView.swift in Sources */,
 				43272F2029BD502900E5CC76 /* ActivityOption.swift in Sources */,
 				43272ED429B9DD7E00E5CC76 /* ContentView.swift in Sources */,
@@ -353,6 +372,7 @@
 				437149912A44177D00B3C9DE /* WaveShape.swift in Sources */,
 				43272EE829B9DED000E5CC76 /* TabBar.swift in Sources */,
 				435CBD072AA71DEF00B1BA7D /* EntryView.swift in Sources */,
+				430286AD2AB1B5FB0068AE30 /* UIComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,7 +39,7 @@ struct JournalView: View {
                                 GeometryReader { geom in
                                     VStack(alignment: .center) {
                                         Text("No entries,\nfeel free to make some :)")
-                                            .customFont(.largeTitle, fontSize: 26)
+                                            .customFont(.largeTitle, fontSize: 24)
                                             .multilineTextAlignment(.center)
                                             .fixedSize()
 

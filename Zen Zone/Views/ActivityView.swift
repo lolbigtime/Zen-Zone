@@ -16,25 +16,36 @@ struct ActivityView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                Spacer()
+                XButton
+            }
+            .padding(20)
+                        
             Text(activity.title)
                 .foregroundColor( .white)
                 .font(.bold(.largeTitle)())
+            
             Spacer()
                 .frame(maxHeight:30)
+            
             Text(activity.caption)
                 .font(.body)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 300)
                 .padding(.leading, 20)
                 .padding(.trailing, 20)
+            
             Spacer()
                 .frame(maxHeight: 30)
+            
             Text("\(activity.points) Point - \(activity.type) activity")
                 .customFont(.body, fontSize: 20)
+            
             Spacer()
                 .frame(maxHeight: 40)
-            Button("Complete") {
-        
+            
+            Button(Completed ? "Completed" : "Complete") {
                 points += activity.points
                 UserDefaults.standard.set(points, forKey: "Points")
                 
@@ -48,16 +59,21 @@ struct ActivityView: View {
  
                 Completed = true
             }
+            .customFont(.title2, fontSize: 20)
+            .foregroundColor(.white)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(Completed ? Color("Background 3") : Color.white.opacity(0.2))
+            .cornerRadius(30)
+            .padding(.horizontal, 20)
             .disabled(Completed)
+            
             Spacer()
                 .frame(maxHeight:40)
-            Text("Tap to Close")
-                .onTapGesture {
-                    isPresenting.toggle()
-                }
+            
         }
         .onAppear {
-            var completedActivitiesList = UserDefaults.standard.array(forKey: "completedActivities") ?? []
+            let completedActivitiesList = UserDefaults.standard.array(forKey: "completedActivities") ?? []
             if completedActivitiesList.contains(where: { ($0 as? String) == activity.title}) {
                 Completed = true
             }
@@ -67,6 +83,22 @@ struct ActivityView: View {
                maxHeight: .infinity)
         .background(activity.color)
         .ignoresSafeArea(edges: .all)
+    }
+    
+    var XButton: some View {
+        Button(action: {
+            isPresenting = false
+            
+        }) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(Color.white.opacity(0.2))
+                    .frame(width: 50, height: 50)
+                Image(systemName: "xmark")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.white)
+            }
+        }
     }
 }
 
