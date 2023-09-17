@@ -10,6 +10,7 @@ import SwiftUI
 struct HCard: View {
     @State private var isPresenting = false
     
+    
     var activity: activitySection
     
     var body: some View {

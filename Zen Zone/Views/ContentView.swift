@@ -60,6 +60,8 @@ struct ContentView: View {
                     Text("Hello")
                 case .user:
                     Text("Hello")
+                case .store:
+                    Text("Hello")
                 }
             }
             .safeAreaInset(edge: .bottom) {

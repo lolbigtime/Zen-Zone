@@ -12,7 +12,6 @@ struct HomeView: View {
     var weeklies = activities.filter { $0.type == "Weekly" }
     var dailies = activities.filter { $0.type == "Daily" }
     @AppStorage("Points") var points = UserDefaults.standard.integer(forKey: "Points")
-    
     var body: some View {
         ZStack {
             Color("Background").ignoresSafeArea()
@@ -64,16 +63,16 @@ struct HomeView: View {
                 HStack {
                     ForEach(dailies) { activity in
                         VCard(activity: activity)}
-                            .padding(20)
-                            .padding(.bottom, 10)
-            
-                    }
+                    .padding(20)
+                    .padding(.bottom, 10)
                 }
             }
         }
     }
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
+        struct HomeView_Previews: PreviewProvider {
+            static var previews: some View {
+                HomeView()
+            }
+        }
     }
-}
+
