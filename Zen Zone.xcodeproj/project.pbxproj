@@ -47,11 +47,20 @@
 		43272F2629BF01A200E5CC76 /* JCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2529BF01A200E5CC76 /* JCard.swift */; };
 		43272F2829BF027D00E5CC76 /* EntryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2729BF027D00E5CC76 /* EntryItem.swift */; };
 		4335B2882A41A59400775C17 /* CreateEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335B2872A41A59400775C17 /* CreateEntryView.swift */; };
+		43573E9B2ACC80CB005D92A8 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43573E9A2ACC80CB005D92A8 /* BadgeView.swift */; };
+		43573E9D2ACC8694005D92A8 /* BadgeSegments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43573E9C2ACC8694005D92A8 /* BadgeSegments.swift */; };
 		435CBD072AA71DEF00B1BA7D /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435CBD062AA71DEF00B1BA7D /* EntryView.swift */; };
 		4371498D2A42F6AC00B3C9DE /* SButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371498C2A42F6AC00B3C9DE /* SButtonView.swift */; };
 		437149912A44177D00B3C9DE /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437149902A44177D00B3C9DE /* WaveShape.swift */; };
 		437472A32A56AFFA0008CD6F /* ECard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437472A22A56AFFA0008CD6F /* ECard.swift */; };
 		438CAD522A72616000B3532B /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438CAD512A72616000B3532B /* ActivityView.swift */; };
+		43BBC49C2ABA122000068ADC /* gptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBC49B2ABA122000068ADC /* gptModel.swift */; };
+		43BBC49E2ABBF80B00068ADC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBC49D2ABBF80B00068ADC /* ProfileView.swift */; };
+		43BBC4A12ABDF29900068ADC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 43BBC4A02ABDF29900068ADC /* Kingfisher */; };
+		43BBC4A32ABDFD4A00068ADC /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBC4A22ABDFD4A00068ADC /* QuoteModel.swift */; };
+		43BBC4A52AC0B1AC00068ADC /* EBGaramond-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BBC4A42AC0B1A700068ADC /* EBGaramond-Regular.ttf */; };
+		43E2A40D2ACD6CF600437770 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2A40C2ACD6CF600437770 /* BottomMenu.swift */; };
+		43E2A40F2ACDCCF700437770 /* SheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2A40E2ACDCCF700437770 /* SheetManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,11 +105,19 @@
 		43272F2529BF01A200E5CC76 /* JCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCard.swift; sourceTree = "<group>"; };
 		43272F2729BF027D00E5CC76 /* EntryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryItem.swift; sourceTree = "<group>"; };
 		4335B2872A41A59400775C17 /* CreateEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEntryView.swift; sourceTree = "<group>"; };
+		43573E9A2ACC80CB005D92A8 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		43573E9C2ACC8694005D92A8 /* BadgeSegments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSegments.swift; sourceTree = "<group>"; };
 		435CBD062AA71DEF00B1BA7D /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		4371498C2A42F6AC00B3C9DE /* SButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SButtonView.swift; sourceTree = "<group>"; };
 		437149902A44177D00B3C9DE /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
 		437472A22A56AFFA0008CD6F /* ECard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECard.swift; sourceTree = "<group>"; };
 		438CAD512A72616000B3532B /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		43BBC49B2ABA122000068ADC /* gptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gptModel.swift; sourceTree = "<group>"; };
+		43BBC49D2ABBF80B00068ADC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		43BBC4A22ABDFD4A00068ADC /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		43BBC4A42AC0B1A700068ADC /* EBGaramond-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-Regular.ttf"; sourceTree = "<group>"; };
+		43E2A40C2ACD6CF600437770 /* BottomMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenu.swift; sourceTree = "<group>"; };
+		43E2A40E2ACDCCF700437770 /* SheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BBC4A12ABDF29900068ADC /* Kingfisher in Frameworks */,
 				43272EFC29B9E2B500E5CC76 /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +198,8 @@
 				43272EF829B9E08C00E5CC76 /* SideMenu.swift */,
 				43272EFD29BB3BE500E5CC76 /* MenuRow.swift */,
 				43272EE729B9DED000E5CC76 /* TabBar.swift */,
+				43E2A40C2ACD6CF600437770 /* BottomMenu.swift */,
+				43E2A40E2ACDCCF700437770 /* SheetManager.swift */,
 			);
 			path = Menus;
 			sourceTree = "<group>";
@@ -205,6 +225,8 @@
 				43272F2329BDDC7100E5CC76 /* Statistic.swift */,
 				43272F2729BF027D00E5CC76 /* EntryItem.swift */,
 				430286A82AB065E90068AE30 /* Message.swift */,
+				43BBC49B2ABA122000068ADC /* gptModel.swift */,
+				43BBC4A22ABDFD4A00068ADC /* QuoteModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +234,7 @@
 		43272F0829BC8ADB00E5CC76 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				43BBC4A42AC0B1A700068ADC /* EBGaramond-Regular.ttf */,
 				43272F0929BC8ADB00E5CC76 /* Inter-Regular.ttf */,
 				43272F0A29BC8ADB00E5CC76 /* Poppins-Bold.ttf */,
 				43272F0B29BC8ADB00E5CC76 /* Inter-SemiBold.ttf */,
@@ -227,6 +250,7 @@
 				43272F1529BC8C2900E5CC76 /* CustomTextField.swift */,
 				43272F1629BC8C2900E5CC76 /* CustomFont.swift */,
 				430286AC2AB1B5FB0068AE30 /* UIComponents.swift */,
+				43573E9C2ACC8694005D92A8 /* BadgeSegments.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -240,6 +264,7 @@
 				4335B2872A41A59400775C17 /* CreateEntryView.swift */,
 				438CAD512A72616000B3532B /* ActivityView.swift */,
 				435CBD062AA71DEF00B1BA7D /* EntryView.swift */,
+				43BBC49D2ABBF80B00068ADC /* ProfileView.swift */,
 				430286A62AB05CF20068AE30 /* ChatView.swift */,
 			);
 			path = Views;
@@ -251,6 +276,7 @@
 				4371498C2A42F6AC00B3C9DE /* SButtonView.swift */,
 				437149902A44177D00B3C9DE /* WaveShape.swift */,
 				430286AE2AB373CC0068AE30 /* DotLoadingView.swift */,
+				43573E9A2ACC80CB005D92A8 /* BadgeView.swift */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -273,6 +299,7 @@
 			name = "Zen Zone";
 			packageProductDependencies = (
 				43272EFB29B9E2B500E5CC76 /* RiveRuntime */,
+				43BBC4A02ABDF29900068ADC /* Kingfisher */,
 			);
 			productName = "Zen Zone";
 			productReference = 43272ECE29B9DD7E00E5CC76 /* Zen Zone.app */;
@@ -304,6 +331,7 @@
 			mainGroup = 43272EC529B9DD7E00E5CC76;
 			packageReferences = (
 				43272EFA29B9E2B500E5CC76 /* XCRemoteSwiftPackageReference "rive-ios" */,
+				43BBC49F2ABDF29900068ADC /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 43272ECF29B9DD7E00E5CC76 /* Products */;
 			projectDirPath = "";
@@ -330,6 +358,7 @@
 				43272F0D29BC8ADB00E5CC76 /* Poppins-Bold.ttf in Resources */,
 				43272ED629B9DD7F00E5CC76 /* Assets.xcassets in Resources */,
 				43272EF229B9DF1B00E5CC76 /* confetti.riv in Resources */,
+				43BBC4A52AC0B1AC00068ADC /* EBGaramond-Regular.ttf in Resources */,
 				43272EF729B9DF1B00E5CC76 /* icons.riv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,7 +371,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				43272F1C29BD46BF00E5CC76 /* HCard.swift in Sources */,
+				43573E9D2ACC8694005D92A8 /* BadgeSegments.swift in Sources */,
+				43BBC49C2ABA122000068ADC /* gptModel.swift in Sources */,
 				43272F1A29BC8C2900E5CC76 /* CustomFont.swift in Sources */,
+				43E2A40F2ACDCCF700437770 /* SheetManager.swift in Sources */,
 				43272F1929BC8C2900E5CC76 /* CustomTextField.swift in Sources */,
 				43272F1E29BD4EE900E5CC76 /* CCard.swift in Sources */,
 				430286A92AB065E90068AE30 /* Message.swift in Sources */,
@@ -360,12 +392,15 @@
 				43272EDE29B9DD7F00E5CC76 /* Zen_Zone.xcdatamodeld in Sources */,
 				4371498D2A42F6AC00B3C9DE /* SButtonView.swift in Sources */,
 				430286AB2AB067950068AE30 /* MCard.swift in Sources */,
+				43BBC4A32ABDFD4A00068ADC /* QuoteModel.swift in Sources */,
 				438CAD522A72616000B3532B /* ActivityView.swift in Sources */,
 				43272F2029BD502900E5CC76 /* ActivityOption.swift in Sources */,
 				43272ED429B9DD7E00E5CC76 /* ContentView.swift in Sources */,
+				43573E9B2ACC80CB005D92A8 /* BadgeView.swift in Sources */,
 				43272EF929B9E08C00E5CC76 /* SideMenu.swift in Sources */,
 				43272F1829BC8C2900E5CC76 /* Extensions.swift in Sources */,
 				43272F1729BC8C2900E5CC76 /* CustomButton.swift in Sources */,
+				43BBC49E2ABBF80B00068ADC /* ProfileView.swift in Sources */,
 				43272F0129BC854300E5CC76 /* HomeView.swift in Sources */,
 				43272ED229B9DD7E00E5CC76 /* Zen_ZoneApp.swift in Sources */,
 				437472A32A56AFFA0008CD6F /* ECard.swift in Sources */,
@@ -373,6 +408,7 @@
 				43272EE829B9DED000E5CC76 /* TabBar.swift in Sources */,
 				435CBD072AA71DEF00B1BA7D /* EntryView.swift in Sources */,
 				430286AD2AB1B5FB0068AE30 /* UIComponents.swift in Sources */,
+				43E2A40D2ACD6CF600437770 /* BottomMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +623,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		43BBC49F2ABDF29900068ADC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -594,6 +638,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 43272EFA29B9E2B500E5CC76 /* XCRemoteSwiftPackageReference "rive-ios" */;
 			productName = RiveRuntime;
+		};
+		43BBC4A02ABDF29900068ADC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43BBC49F2ABDF29900068ADC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 

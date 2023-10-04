@@ -11,7 +11,8 @@ import CoreData
 
 struct ContentView: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
-    
+    @StateObject var quoteModel = QuoteModel()
+
     @State var isOpen = false
 
     var button = RiveViewModel(fileName: "menu_button", stateMachineName: "State Machine", autoPlay: false)
@@ -70,7 +71,19 @@ struct ContentView: View {
                         .rotation3DEffect(Angle(degrees: isOpen ? 30.0 : 0), axis: (x: 0, y: -1, z: 0))
                         .ignoresSafeArea()
                 case .user:
-                    Text("Hello")
+                    ProfileView(quoteModel: quoteModel)
+                        .safeAreaInset(edge: .bottom) {
+                            Color.clear.frame(height: 80)
+                        }
+                        .safeAreaInset(edge: .top) {
+                            Color.clear.frame(height: 104)
+                        }
+                        .mask(RoundedRectangle(cornerRadius: isOpen ? 30 : 0, style: .continuous))
+                        .offset(x: isOpen ? 265 : 0)
+                        .scaleEffect(isOpen ? 0.9: 1)
+                        .rotation3DEffect(Angle(degrees: isOpen ? 30.0 : 0), axis: (x: 0, y: -1, z: 0))
+                        .ignoresSafeArea()
+                        .environmentObject(SheetManager())
                 }
             }
             .safeAreaInset(edge: .bottom) {

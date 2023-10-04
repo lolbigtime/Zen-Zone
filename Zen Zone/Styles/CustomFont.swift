@@ -15,10 +15,12 @@ struct CustomFont: ViewModifier {
         switch textStyle {
         case .largeTitle, .title, .title2, .title3:
             return "Poppins Bold"
-        case .body, .subheadline, .footnote, .caption:
+        case .body, .footnote, .caption:
             return "Inter Regular"
         case .headline, .subheadline2, .footnote2, .caption2:
             return "Inter SemiBold"
+        case .subheadline:
+            return "EBGaramond-Regular"
         }
     }
     
