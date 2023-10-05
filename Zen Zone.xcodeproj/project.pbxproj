@@ -50,6 +50,7 @@
 		48B1BEA32AB015A10091CF0E /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1BEA22AB015A10091CF0E /* StoreView.swift */; };
 		48B1BEA52AB0163C0091CF0E /* SCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1BEA42AB0163C0091CF0E /* SCard.swift */; };
 		48B1BEA72AB018970091CF0E /* StoreItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1BEA62AB018970091CF0E /* StoreItems.swift */; };
+		48B1BEA92ABFA9260091CF0E /* TCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1BEA82ABFA9250091CF0E /* TCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		48B1BEA22AB015A10091CF0E /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		48B1BEA42AB0163C0091CF0E /* SCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCard.swift; sourceTree = "<group>"; };
 		48B1BEA62AB018970091CF0E /* StoreItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItems.swift; sourceTree = "<group>"; };
+		48B1BEA82ABFA9250091CF0E /* TCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				43272F2529BF01A200E5CC76 /* JCard.swift */,
 				437472A22A56AFFA0008CD6F /* ECard.swift */,
 				48B1BEA42AB0163C0091CF0E /* SCard.swift */,
+				48B1BEA82ABFA9250091CF0E /* TCard.swift */,
 			);
 			path = CardViews;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				43272F2229BDD7F200E5CC76 /* JournalView.swift in Sources */,
 				43272F0729BC895C00E5CC76 /* ActivitySection.swift in Sources */,
 				43272EFE29BB3BE500E5CC76 /* MenuRow.swift in Sources */,
+				48B1BEA92ABFA9260091CF0E /* TCard.swift in Sources */,
 				43272F2629BF01A200E5CC76 /* JCard.swift in Sources */,
 				4335B2882A41A59400775C17 /* CreateEntryView.swift in Sources */,
 				43272F2829BF027D00E5CC76 /* EntryItem.swift in Sources */,

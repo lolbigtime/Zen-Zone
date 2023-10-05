@@ -18,6 +18,8 @@ struct StoreItems: Identifiable {
 }
 
 var items = [
-    StoreItems(name: "Daily Streak", color: .blue, description: "Complete 3 daily activities in a single day to gain extra points", cost: 2, type: "store"),
-    StoreItems(name: "Weekly Streak", color: .blue, description: "Complete 5 weekly activities from this week to gain extra points", cost: 15, type: "store")
+    StoreItems(name: "Daily Streak", color: .blue, description: "Complete 3 daily activities in a single day to gain extra points", cost: 2, type: "streak"),
+    StoreItems(name: "Weekly Streak", color: .blue, description: "Complete 5 weekly activities from this week to gain extra points", cost: 15, type: "streak"),
+    StoreItems(name: "Green", color: .blue, description: "New Background Color!", cost: 50, type: "cosmetic"),
+    StoreItems(name: "Yellow", color: .blue, description: "New Background Color!", cost: 50, type: "cosmetic")
 ]
