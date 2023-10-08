@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct BottomMenu: View {
+    @ObservedObject var userModel: UserModel
+    @State private var photoItem: PhotosPickerItem?
+    @State private var photo: UIImage?
+    @State private var isImagePickerPresented = false
+    @ObservedObject var bottomSheetManager: SheetManager
+    @Binding var isLoading: Bool
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
@@ -15,11 +22,17 @@ struct BottomMenu: View {
                     .customFont(.title2, fontSize: 20)
                 Spacer()
             }
-            VStack(alignment: .leading, spacing: 3) {
-                Text("Change Avatar")
-                    .customFont(.title2, fontSize: 16)
-                Text("Upload a PNG or JPG. Images should be in a 1:1 format")
-                    .customFont(.body, fontSize: 12)
+            Button(action: {
+                // Set the flag to present the image picker
+                isLoading = true
+                isImagePickerPresented.toggle()
+            }) {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Change Avatar")
+                        .customFont(.title2, fontSize: 16)
+                    Text("Upload a PNG or JPG. Images should be in a 1:1 format")
+                        .customFont(.body, fontSize: 12)
+                }
             }
             VStack(alignment: .leading, spacing: 3) {
                 Text("Switch Banner")
@@ -37,10 +50,37 @@ struct BottomMenu: View {
         .background(Color("Background 2"))
         .cornerRadius(20 )
         .transition(.move(edge: .bottom))
+        .photosPicker(isPresented: $isImagePickerPresented, selection: $photoItem)
+        .onChange(of: photoItem) { _ in
+            Task {
+                if let data = try? await photoItem?.loadTransferable(type: Data.self) {
+                    print(data, "sucess")
+                    
+                    if let uiImage = UIImage(data: data) {
+                        userModel.profileImage = uiImage
+                        withAnimation {
+                            bottomSheetManager.dismiss()
+                            isLoading = false
 
+                        }
+                            
+                    }
+                }
+            }
+        }
+        
     }
 }
+/*
+struct ImagePickerView: View {
+    @Binding var image: Image?
+    @Environment(\.presentationMode) var presentationMode
 
-#Preview {
-    BottomMenu()
+    var body: some View {
+        ImagePicker(image: $image) { selectedImage in
+            image = selectedImage
+            presentationMode.wrappedValue.dismiss()
+        }
+    }
 }
+*/

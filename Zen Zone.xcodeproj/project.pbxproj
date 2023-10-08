@@ -61,6 +61,8 @@
 		43BBC4A52AC0B1AC00068ADC /* EBGaramond-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43BBC4A42AC0B1A700068ADC /* EBGaramond-Regular.ttf */; };
 		43E2A40D2ACD6CF600437770 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2A40C2ACD6CF600437770 /* BottomMenu.swift */; };
 		43E2A40F2ACDCCF700437770 /* SheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2A40E2ACDCCF700437770 /* SheetManager.swift */; };
+		43E2A4112ACF24ED00437770 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2A4102ACF24ED00437770 /* UserModel.swift */; };
+		43E2A4132AD2447200437770 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2A4122AD2447200437770 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +120,8 @@
 		43BBC4A42AC0B1A700068ADC /* EBGaramond-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-Regular.ttf"; sourceTree = "<group>"; };
 		43E2A40C2ACD6CF600437770 /* BottomMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenu.swift; sourceTree = "<group>"; };
 		43E2A40E2ACDCCF700437770 /* SheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetManager.swift; sourceTree = "<group>"; };
+		43E2A4102ACF24ED00437770 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		43E2A4122AD2447200437770 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				43272F0629BC895C00E5CC76 /* ActivitySection.swift */,
+				43E2A4102ACF24ED00437770 /* UserModel.swift */,
 				43272F1F29BD502900E5CC76 /* ActivityOption.swift */,
 				43272F2329BDDC7100E5CC76 /* Statistic.swift */,
 				43272F2729BF027D00E5CC76 /* EntryItem.swift */,
@@ -274,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				4371498C2A42F6AC00B3C9DE /* SButtonView.swift */,
+				43E2A4122AD2447200437770 /* LoadingView.swift */,
 				437149902A44177D00B3C9DE /* WaveShape.swift */,
 				430286AE2AB373CC0068AE30 /* DotLoadingView.swift */,
 				43573E9A2ACC80CB005D92A8 /* BadgeView.swift */,
@@ -388,6 +394,7 @@
 				43272F2629BF01A200E5CC76 /* JCard.swift in Sources */,
 				4335B2882A41A59400775C17 /* CreateEntryView.swift in Sources */,
 				43272F2829BF027D00E5CC76 /* EntryItem.swift in Sources */,
+				43E2A4112ACF24ED00437770 /* UserModel.swift in Sources */,
 				430286AF2AB373CC0068AE30 /* DotLoadingView.swift in Sources */,
 				43272EDE29B9DD7F00E5CC76 /* Zen_Zone.xcdatamodeld in Sources */,
 				4371498D2A42F6AC00B3C9DE /* SButtonView.swift in Sources */,
@@ -395,6 +402,7 @@
 				43BBC4A32ABDFD4A00068ADC /* QuoteModel.swift in Sources */,
 				438CAD522A72616000B3532B /* ActivityView.swift in Sources */,
 				43272F2029BD502900E5CC76 /* ActivityOption.swift in Sources */,
+				43E2A4132AD2447200437770 /* LoadingView.swift in Sources */,
 				43272ED429B9DD7E00E5CC76 /* ContentView.swift in Sources */,
 				43573E9B2ACC80CB005D92A8 /* BadgeView.swift in Sources */,
 				43272EF929B9E08C00E5CC76 /* SideMenu.swift in Sources */,

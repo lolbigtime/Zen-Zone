@@ -12,6 +12,7 @@ import CoreData
 struct ContentView: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
     @StateObject var quoteModel = QuoteModel()
+    @StateObject var userModel = UserModel()
 
     @State var isOpen = false
 
@@ -22,7 +23,7 @@ struct ContentView: View {
             
             Color("Background 2").ignoresSafeArea()
             
-            SideMenu()
+            SideMenu(userModel: userModel)
                 .opacity(isOpen ? 1 : 0)
                 .offset(x: isOpen ? 0 : -300)
                 .rotation3DEffect(.degrees(isOpen ? 0 : 30), axis: (x: 0, y: 1, z: 0))
@@ -71,7 +72,7 @@ struct ContentView: View {
                         .rotation3DEffect(Angle(degrees: isOpen ? 30.0 : 0), axis: (x: 0, y: -1, z: 0))
                         .ignoresSafeArea()
                 case .user:
-                    ProfileView(quoteModel: quoteModel)
+                    ProfileView(quoteModel: quoteModel, userModel: userModel)
                         .safeAreaInset(edge: .bottom) {
                             Color.clear.frame(height: 80)
                         }

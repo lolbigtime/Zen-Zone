@@ -9,9 +9,12 @@ import SwiftUI
 import Kingfisher
 
 struct ProfileView: View {
-    @ObservedObject var quoteModel: QuoteModel
+    @ObservedObject var quoteModel: QuoteModel    
+    @ObservedObject var userModel: UserModel
+
     @AppStorage("Points") var points = UserDefaults.standard.integer(forKey: "Points")
     @EnvironmentObject var isBottomSheetManager: SheetManager
+    @State var isLoading = false
     
     var body: some View {
         GeometryReader { geo in
@@ -26,7 +29,7 @@ struct ProfileView: View {
                                     Spacer()
                                         .frame(height: 60)
                                     ZStack {
-                                        Image("testimage")
+                                        Image(uiImage: userModel.profileImage ?? UIImage(named: "testimage")!)
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
                                             .frame(width: geo.size.width / 2.6, height: geo.size.width / 2.6)
@@ -63,7 +66,7 @@ struct ProfileView: View {
                                     .frame(width: geo.size.width / 2.6, height: geo.size.width / 2.6)
                                     
                                    
-                                    Text("Tai Wong")
+                                    Text(userModel.username ?? "")
                                         .customFont(.largeTitle, fontSize: 34)
                                         .frame(maxWidth: .infinity, alignment: .center)
                                         .padding(.horizontal, 20)
@@ -82,7 +85,7 @@ struct ProfileView: View {
                                 
                                 HStack(spacing: 40) {
                                     VStack {
-                                        Text("0")
+                                        Text(String(userModel.banners.count))
                                             .customFont(.title2, fontSize: 24)
                                         Text("Badges")
                                             .customFont(.caption, fontSize: 12)
@@ -94,7 +97,7 @@ struct ProfileView: View {
                                             .customFont(.caption, fontSize: 12)
                                     }
                                     VStack {
-                                        Text("0")
+                                        Text(String(userModel.banners.count))
                                             .customFont(.title2, fontSize: 24)
                                         Text("Banners")
                                             .customFont(.caption, fontSize: 12)
@@ -156,20 +159,27 @@ struct ProfileView: View {
                 
                 
                 if isBottomSheetManager.action.isPresented {
-                    Color.black.opacity(0.3)
-                        .ignoresSafeArea()
-                        .onTapGesture {
-                            withAnimation {
-                                isBottomSheetManager.dismiss()
-                            }
+                    ZStack {
+                        if isLoading {
+                            LoadingView()
                         }
+                        Color.black.opacity(0.3)
+                            .onTapGesture {
+                                withAnimation {
+                                    isBottomSheetManager.dismiss()
+                                }
+                            }
+                    }
+                    .ignoresSafeArea()
+
+                    
                 }
 
             }
         }
         .overlay(alignment: .bottom) {
             if isBottomSheetManager.action.isPresented {
-                BottomMenu()
+                BottomMenu(userModel: userModel, bottomSheetManager: isBottomSheetManager, isLoading: $isLoading)
             }
         }
         .ignoresSafeArea()
@@ -183,6 +193,6 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(quoteModel: QuoteModel())
+    ProfileView(quoteModel: QuoteModel(), userModel: UserModel())
         .environmentObject(SheetManager())
 }

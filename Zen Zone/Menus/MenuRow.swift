@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MenuRow: View {
-    var item: MenuItem
-    @Binding var selectedMenu: menuSelect
+    var item: TabItem
+    @Binding var selectedMenu: Tab
     var body: some View {
         HStack {
             item.icon.view()
@@ -23,7 +23,7 @@ struct MenuRow: View {
         .background(
             RoundedRectangle(cornerRadius: 10, style: .continuous)
                 .fill(.blue)
-                .frame(maxWidth: selectedMenu == item.menu ? .infinity : 0)
+                .frame(maxWidth: selectedMenu == item.tab ? .infinity : 0)
         
         )
         .background(Color("Background 2"))
@@ -33,14 +33,23 @@ struct MenuRow: View {
                 try? item.icon.setInput("active", value: false)
             }
             withAnimation {
-                selectedMenu = item.menu
+                selectedMenu = item.tab
+                /*
+                switch item.text {
+                case "Home":
+                    pass
+                case "Search":
+                    pass
+                case "Help":
+                    pass
+                case "Shop":
+                    pass
+                case "Journal":
+                    pass
+                }
+                 */
             }
         }
     }
 }
 
-struct MenuRow_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuRow(item: menuItems[0], selectedMenu: .constant(.home))
-    }
-}

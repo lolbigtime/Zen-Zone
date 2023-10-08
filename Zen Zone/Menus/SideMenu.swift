@@ -9,21 +9,21 @@ import SwiftUI
 import RiveRuntime
 
 struct SideMenu: View {
-    @State var selectedMenu: menuSelect = .home
-    
+    @ObservedObject var userModel: UserModel
+    @AppStorage("selectedTab") var selectedTab: Tab = .home
+
     let icon = RiveViewModel(fileName: "icons", stateMachineName: "HOME_interactivity", artboardName: "HOME")
     
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "person")
-                    .padding(12)
-                    .background(.white.opacity(0.2))
+                Image(uiImage: userModel.profileImage ?? UIImage(named: "testimage")!)
+                    .frame(width: 50, height: 50)
                     .mask(Circle())
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Your Mom")
+                    Text(userModel.username ?? "")
                         .font(.headline)
-                    Text("Help me pls")
+                    Text(Date.now.formatted())
                         .font(.subheadline)
                         .opacity(0.7)
                 }
@@ -39,13 +39,13 @@ struct SideMenu: View {
                 .opacity(0.7)
             
             VStack(alignment: .leading, spacing: 0) {
-                ForEach(menuItems) { item in
+                ForEach(tabItems) { item in
                     Rectangle()
                         .frame(height: 1)
                         .opacity(0.1)
                         .padding(.horizontal)
                     
-                    MenuRow(item: item, selectedMenu: $selectedMenu)
+                    MenuRow(item: item, selectedMenu: $selectedTab)
                 }
             }
             .padding(8)
@@ -61,11 +61,6 @@ struct SideMenu: View {
     }
 }
 
-struct SideMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        SideMenu()
-    }
-}
 
 struct MenuItem: Identifiable {
     var id = UUID()
