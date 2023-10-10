@@ -30,6 +30,7 @@ struct SideMenu: View {
                 Spacer()
             }
             .padding()
+            .padding(.top, 20)
             
             Text("BROWSE")
                 .font(.headline)
