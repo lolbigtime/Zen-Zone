@@ -11,7 +11,7 @@ import CoreData
 
 struct ContentView: View {
     @AppStorage("selectedTab") var selectedTab: Tab = .home
-    
+    @EnvironmentObject var globalData: GlobalData
     @State var isOpen = false
 
     var button = RiveViewModel(fileName: "menu_button", stateMachineName: "State Machine", autoPlay: false)
@@ -62,7 +62,19 @@ struct ContentView: View {
                     Text("Hello")
                 case .store:
                     Text("Hello")
-                }
+                case .inventory:
+                    InventoryView()
+                        .safeAreaInset(edge: .bottom) {
+                            Color.clear.frame(height: 80)
+                        }
+                        .safeAreaInset(edge: .top) {
+                            Color.clear.frame(height: 104)
+                        }
+                        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                        .offset(x: isOpen ? 265 : 0)
+                        .scaleEffect(isOpen ? 0.9: 1)
+                        .rotation3DEffect(Angle(degrees: isOpen ? 30.0 : 0), axis: (x: 0, y: -1, z: 0))
+                        .ignoresSafeArea()                }
             }
             .safeAreaInset(edge: .bottom) {
                 Color.clear.frame(height: 80)
@@ -107,5 +119,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(GlobalData())
     }
 }

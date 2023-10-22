@@ -23,3 +23,13 @@ var items = [
     StoreItems(name: "Green", color: .blue, description: "New Background Color!", cost: 50, type: "cosmetic"),
     StoreItems(name: "Yellow", color: .blue, description: "New Background Color!", cost: 50, type: "cosmetic")
 ]
+class InventoryModel: ObservableObject {
+    @Published var inventory: [StoreItems] = []
+
+    func addItemToInventory(_ item: StoreItems) {
+        inventory.append(item)
+    }
+}
+
+
+

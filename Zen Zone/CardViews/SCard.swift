@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+class GlobalData: ObservableObject {
+    @Published var inventoryitems: [String] = []
+}
+
 struct SCard: View {
     @State private var isPresenting = false
     @State private var Bought = false
@@ -14,8 +18,9 @@ struct SCard: View {
     @State var WeeklyStreakBought = false
     @State var DailyStreakBought = false
     var items: StoreItems
-    var body: some View {
     
+    var body: some View {
+        var inventoryitems = [""]
         VStack(alignment: .leading, spacing: 2) {
             Text(items.name)
                 .foregroundColor( .white)
@@ -47,14 +52,30 @@ struct SCard: View {
                     .frame(maxWidth: 2)
                 Button("Purchase") {
                     points -= items.cost
+                    
                     if items.name == "Weekly Streak"{
                         WeeklyStreakBought = true
+                        inventoryitems.append("WeeklyStreak")
+                        
                     }
                     else{
                         
                     }
                     if items.name == "Daily Streak"{
                         DailyStreakBought = true
+                        inventoryitems.append("DailyStreak")
+                    }
+                    else{
+                        
+                    }
+                    if items.name == "Green"{
+                        inventoryitems.append("GreenBackground")
+                    }
+                    else{
+                        
+                    }
+                    if items.name == "Blue"{
+                        inventoryitems.append("BlueBackground")
                     }
                     else{
                         
@@ -86,6 +107,8 @@ struct SCard: View {
         
     }
 }
+
+
 
 struct SCard_Previews: PreviewProvider {
     static var previews: some View {
