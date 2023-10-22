@@ -13,6 +13,9 @@ struct TCard: View {
     @AppStorage("Points") private var points = UserDefaults.standard.integer(forKey: "Points")
     @State var WeeklyStreakBought = false
     @State var DailyStreakBought = false
+    @State private var isGrey = false
+    @State private var isPurchased = false
+
     var items: StoreItems
     var body: some View {
     
@@ -34,19 +37,23 @@ struct TCard: View {
                 .padding(.trailing, 1)
             Spacer()
                 .frame(maxWidth: 2, maxHeight: 20)
-            Button("Purchase") {
+            Button(isPurchased ? "Purchased" : "Purchase") {
                 points -= items.cost
-                if items.name == "Weekly Streak"{
-                    WeeklyStreakBought = true
-                }
+                isGrey.toggle()
+                isPurchased.toggle()
+
+                if items.name == "Green"{
+                    let greenBackground = ["greenBackground"]
+                    UserDefaults.standard.set(greenBackground, forKey: "inventory")                    }
                 else{
                     
                 }
-                if items.name == "Daily Streak"{
-                    DailyStreakBought = true
+                if items.name == "Blue"{
+                    let blueBackground = ["BlueBackground"]
+                    UserDefaults.standard.set(blueBackground, forKey: "inventory")
                 }
                 else{
-                        
+                    
                 }
                 UserDefaults.standard.set(points, forKey: "Points")
                     
@@ -64,10 +71,9 @@ struct TCard: View {
         .foregroundColor(.white)
         .padding(0)
         .frame(width: 180, height: 250)
-        .background(.linearGradient(colors: [items.color, items.color.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
+        .background(.linearGradient(colors: [isGrey ? Color.gray : Color.blue, isGrey ? Color.gray : Color.blue.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
         .mask(RoundedRectangle(cornerRadius: 25, style: .continuous))
-        .shadow(color: items.color.opacity(0.3), radius: 8, x: 0, y: 12)
-        .shadow(color: items.color.opacity(0.3), radius: 2, x: 0, y: 1)
+        .shadow(color: isGrey ? Color.gray : Color.blue.opacity(0.3), radius: 2, x: 0, y: 1)
         
     }
 }

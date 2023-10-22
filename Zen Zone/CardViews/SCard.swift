@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-class GlobalData: ObservableObject {
-    @Published var inventoryitems: [String] = []
-}
 
 struct SCard: View {
     @State private var isPresenting = false
@@ -17,10 +14,12 @@ struct SCard: View {
     @AppStorage("Points") private var points = UserDefaults.standard.integer(forKey: "Points")
     @State var WeeklyStreakBought = false
     @State var DailyStreakBought = false
+    @State private var isGrey = false
+    @State private var isPurchased = false
     var items: StoreItems
     
+    
     var body: some View {
-        var inventoryitems = [""]
         VStack(alignment: .leading, spacing: 2) {
             Text(items.name)
                 .foregroundColor( .white)
@@ -50,12 +49,14 @@ struct SCard: View {
                     .padding(.trailing, 1)
                 Spacer()
                     .frame(maxWidth: 2)
-                Button("Purchase") {
+                Button(isPurchased ? "Purchased" : "Purchase") {
                     points -= items.cost
-                    
+                    isGrey.toggle()
+                    isPurchased.toggle()
                     if items.name == "Weekly Streak"{
                         WeeklyStreakBought = true
-                        inventoryitems.append("WeeklyStreak")
+                        let weeklyStreak = ["weeklyStreak"]
+                        UserDefaults.standard.set(weeklyStreak, forKey: "inventory")
                         
                     }
                     else{
@@ -63,24 +64,16 @@ struct SCard: View {
                     }
                     if items.name == "Daily Streak"{
                         DailyStreakBought = true
-                        inventoryitems.append("DailyStreak")
+                        let dailyStreak = ["dailyStreak"]
+                        UserDefaults.standard.set(dailyStreak, forKey: "inventory")
                     }
                     else{
                         
                     }
-                    if items.name == "Green"{
-                        inventoryitems.append("GreenBackground")
-                    }
-                    else{
-                        
-                    }
-                    if items.name == "Blue"{
-                        inventoryitems.append("BlueBackground")
-                    }
-                    else{
-                        
-                    }
+                    
                     UserDefaults.standard.set(points, forKey: "Points")
+                    
+                    
                     
                     var completedActivitiesList = UserDefaults.standard.array(forKey: "completedActivities") ?? []
                     UserDefaults.standard.set(completedActivitiesList, forKey: "completedActivities")
@@ -101,9 +94,9 @@ struct SCard: View {
         .foregroundColor(.white)
         .padding(0)
         .frame(width: 300, height: 200)
-        .background(.linearGradient(colors: [items.color, items.color.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
+        .background(.linearGradient(colors: [isGrey ? Color.gray : Color.blue, isGrey ? Color.gray : Color.blue.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
         .mask(RoundedRectangle(cornerRadius: 25, style: .continuous))
-        .shadow(color: items.color.opacity(0.3), radius: 2, x: 0, y: 1)
+        .shadow(color: isGrey ? Color.gray  : Color.blue.opacity(0.3), radius: 2, x: 0, y: 1)
         
     }
 }

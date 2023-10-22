@@ -51,7 +51,6 @@
 		48B1BEA52AB0163C0091CF0E /* SCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1BEA42AB0163C0091CF0E /* SCard.swift */; };
 		48B1BEA72AB018970091CF0E /* StoreItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1BEA62AB018970091CF0E /* StoreItems.swift */; };
 		48B1BEA92ABFA9260091CF0E /* TCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1BEA82ABFA9250091CF0E /* TCard.swift */; };
-		48D0D2032ADCE324007206B5 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D0D2022ADCE324007206B5 /* InventoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,7 +99,6 @@
 		48B1BEA42AB0163C0091CF0E /* SCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCard.swift; sourceTree = "<group>"; };
 		48B1BEA62AB018970091CF0E /* StoreItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItems.swift; sourceTree = "<group>"; };
 		48B1BEA82ABFA9250091CF0E /* TCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCard.swift; sourceTree = "<group>"; };
-		48D0D2022ADCE324007206B5 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +239,6 @@
 				438CAD512A72616000B3532B /* ActivityView.swift */,
 				435CBD062AA71DEF00B1BA7D /* EntryView.swift */,
 				48B1BEA22AB015A10091CF0E /* StoreView.swift */,
-				48D0D2022ADCE324007206B5 /* InventoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -364,7 +361,6 @@
 				43272EF929B9E08C00E5CC76 /* SideMenu.swift in Sources */,
 				43272F1829BC8C2900E5CC76 /* Extensions.swift in Sources */,
 				43272F1729BC8C2900E5CC76 /* CustomButton.swift in Sources */,
-				48D0D2032ADCE324007206B5 /* InventoryView.swift in Sources */,
 				43272F0129BC854300E5CC76 /* HomeView.swift in Sources */,
 				43272ED229B9DD7E00E5CC76 /* Zen_ZoneApp.swift in Sources */,
 				437472A32A56AFFA0008CD6F /* ECard.swift in Sources */,
