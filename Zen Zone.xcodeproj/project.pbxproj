@@ -47,11 +47,41 @@
 		437149912A44177D00B3C9DE /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437149902A44177D00B3C9DE /* WaveShape.swift */; };
 		437472A32A56AFFA0008CD6F /* ECard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437472A22A56AFFA0008CD6F /* ECard.swift */; };
 		438CAD522A72616000B3532B /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438CAD512A72616000B3532B /* ActivityView.swift */; };
+		487256292AF08F840041EA67 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487256282AF08F840041EA67 /* WidgetKit.framework */; };
+		4872562B2AF08F840041EA67 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4872562A2AF08F840041EA67 /* SwiftUI.framework */; };
+		4872562E2AF08F840041EA67 /* Zen_Zone_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4872562D2AF08F840041EA67 /* Zen_Zone_WidgetBundle.swift */; };
+		487256302AF08F840041EA67 /* Zen_Zone_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4872562F2AF08F840041EA67 /* Zen_Zone_Widget.swift */; };
+		487256322AF08F850041EA67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487256312AF08F850041EA67 /* Assets.xcassets */; };
+		487256362AF08F850041EA67 /* Zen-Zone-WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 487256262AF08F840041EA67 /* Zen-Zone-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48B1BEA32AB015A10091CF0E /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1BEA22AB015A10091CF0E /* StoreView.swift */; };
 		48B1BEA52AB0163C0091CF0E /* SCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1BEA42AB0163C0091CF0E /* SCard.swift */; };
 		48B1BEA72AB018970091CF0E /* StoreItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1BEA62AB018970091CF0E /* StoreItems.swift */; };
 		48B1BEA92ABFA9260091CF0E /* TCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B1BEA82ABFA9250091CF0E /* TCard.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		487256342AF08F850041EA67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43272EC629B9DD7E00E5CC76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 487256252AF08F840041EA67;
+			remoteInfo = "Zen-Zone-WidgetExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		487256372AF08F850041EA67 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				487256362AF08F850041EA67 /* Zen-Zone-WidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		43272ECE29B9DD7E00E5CC76 /* Zen Zone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zen Zone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +125,14 @@
 		437149902A44177D00B3C9DE /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
 		437472A22A56AFFA0008CD6F /* ECard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECard.swift; sourceTree = "<group>"; };
 		438CAD512A72616000B3532B /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		487256262AF08F840041EA67 /* Zen-Zone-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Zen-Zone-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		487256282AF08F840041EA67 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4872562A2AF08F840041EA67 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4872562D2AF08F840041EA67 /* Zen_Zone_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zen_Zone_WidgetBundle.swift; sourceTree = "<group>"; };
+		4872562F2AF08F840041EA67 /* Zen_Zone_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zen_Zone_Widget.swift; sourceTree = "<group>"; };
+		487256312AF08F850041EA67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		487256332AF08F850041EA67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4872563B2AF097B10041EA67 /* Zen-Zone-WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Zen-Zone-WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		48B1BEA22AB015A10091CF0E /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		48B1BEA42AB0163C0091CF0E /* SCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCard.swift; sourceTree = "<group>"; };
 		48B1BEA62AB018970091CF0E /* StoreItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItems.swift; sourceTree = "<group>"; };
@@ -110,13 +148,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		487256232AF08F840041EA67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4872562B2AF08F840041EA67 /* SwiftUI.framework in Frameworks */,
+				487256292AF08F840041EA67 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		43272EC529B9DD7E00E5CC76 = {
 			isa = PBXGroup;
 			children = (
+				4872563B2AF097B10041EA67 /* Zen-Zone-WidgetExtension.entitlements */,
 				43272ED029B9DD7E00E5CC76 /* Zen Zone */,
+				4872562C2AF08F840041EA67 /* Zen-Zone-Widget */,
+				487256272AF08F840041EA67 /* Frameworks */,
 				43272ECF29B9DD7E00E5CC76 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				43272ECE29B9DD7E00E5CC76 /* Zen Zone.app */,
+				487256262AF08F840041EA67 /* Zen-Zone-WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,6 +303,26 @@
 			path = Geometry;
 			sourceTree = "<group>";
 		};
+		487256272AF08F840041EA67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				487256282AF08F840041EA67 /* WidgetKit.framework */,
+				4872562A2AF08F840041EA67 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4872562C2AF08F840041EA67 /* Zen-Zone-Widget */ = {
+			isa = PBXGroup;
+			children = (
+				4872562D2AF08F840041EA67 /* Zen_Zone_WidgetBundle.swift */,
+				4872562F2AF08F840041EA67 /* Zen_Zone_Widget.swift */,
+				487256312AF08F850041EA67 /* Assets.xcassets */,
+				487256332AF08F850041EA67 /* Info.plist */,
+			);
+			path = "Zen-Zone-Widget";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,10 +333,12 @@
 				43272ECA29B9DD7E00E5CC76 /* Sources */,
 				43272ECB29B9DD7E00E5CC76 /* Frameworks */,
 				43272ECC29B9DD7E00E5CC76 /* Resources */,
+				487256372AF08F850041EA67 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				487256352AF08F850041EA67 /* PBXTargetDependency */,
 			);
 			name = "Zen Zone";
 			packageProductDependencies = (
@@ -275,6 +348,23 @@
 			productReference = 43272ECE29B9DD7E00E5CC76 /* Zen Zone.app */;
 			productType = "com.apple.product-type.application";
 		};
+		487256252AF08F840041EA67 /* Zen-Zone-WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4872563A2AF08F850041EA67 /* Build configuration list for PBXNativeTarget "Zen-Zone-WidgetExtension" */;
+			buildPhases = (
+				487256222AF08F840041EA67 /* Sources */,
+				487256232AF08F840041EA67 /* Frameworks */,
+				487256242AF08F840041EA67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Zen-Zone-WidgetExtension";
+			productName = "Zen-Zone-WidgetExtension";
+			productReference = 487256262AF08F840041EA67 /* Zen-Zone-WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -282,11 +372,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					43272ECD29B9DD7E00E5CC76 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					487256252AF08F840041EA67 = {
+						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
@@ -307,6 +400,7 @@
 			projectRoot = "";
 			targets = (
 				43272ECD29B9DD7E00E5CC76 /* Zen Zone */,
+				487256252AF08F840041EA67 /* Zen-Zone-WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -328,6 +422,14 @@
 				43272ED629B9DD7F00E5CC76 /* Assets.xcassets in Resources */,
 				43272EF229B9DF1B00E5CC76 /* confetti.riv in Resources */,
 				43272EF729B9DF1B00E5CC76 /* icons.riv in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487256242AF08F840041EA67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				487256322AF08F850041EA67 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +474,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		487256222AF08F840041EA67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4872562E2AF08F840041EA67 /* Zen_Zone_WidgetBundle.swift in Sources */,
+				487256302AF08F840041EA67 /* Zen_Zone_Widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		487256352AF08F850041EA67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 487256252AF08F840041EA67 /* Zen-Zone-WidgetExtension */;
+			targetProxy = 487256342AF08F850041EA67 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		43272EDF29B9DD7F00E5CC76 /* Debug */ = {
@@ -492,6 +611,7 @@
 		43272EE229B9DD7F00E5CC76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +643,7 @@
 		43272EE329B9DD7F00E5CC76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -551,6 +672,73 @@
 			};
 			name = Release;
 		};
+		487256382AF08F850041EA67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Zen-Zone-WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 487H2S9ZW9;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Zen-Zone-Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Zen-Zone-Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.2023CAC.Zen-Zone.Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		487256392AF08F850041EA67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Zen-Zone-WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 487H2S9ZW9;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Zen-Zone-Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Zen-Zone-Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.2023CAC.Zen-Zone.Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -568,6 +756,15 @@
 			buildConfigurations = (
 				43272EE229B9DD7F00E5CC76 /* Debug */,
 				43272EE329B9DD7F00E5CC76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4872563A2AF08F850041EA67 /* Build configuration list for PBXNativeTarget "Zen-Zone-WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				487256382AF08F850041EA67 /* Debug */,
+				487256392AF08F850041EA67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
