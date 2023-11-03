@@ -15,7 +15,7 @@ struct CreateEntryView: View {
     @State private var selectedFeelings: [String] = []
     @State private var title: String = ""
     @State private var notes = "Write some notes..."
-    @State private var progress: CGFloat = 0.4
+    @State private var progress: CGFloat = 0.5
     
     @State private var photoItem: PhotosPickerItem?
     @State private var photo: Image?
@@ -23,6 +23,8 @@ struct CreateEntryView: View {
     @Binding var isOn: Bool
     
     @EnvironmentObject var entrySections: SavedEntries
+
+    @State var userModel = UserModel()
 
     private let currentDate = Date.now
     
@@ -77,7 +79,9 @@ struct CreateEntryView: View {
             VStack {
                 HStack {
                     if presentStage > 0 {
-                        BButton
+                        if presentStage != 7 {
+                            BButton
+                        }
                     }
                     Spacer()
                     XButton
@@ -135,7 +139,15 @@ struct CreateEntryView: View {
                                                 } else {
                                                     entrySections.entrySections.append(EntrySection(date: Calendar.current.dateComponents([.year, .month, .weekday, .day], from: Date.now), items: [entryItem], mood: 0, photos: 1, journal: 0))
                                                 }
+                                                var badgeslist = UserDefaults.standard.array(forKey: "badges") ?? []
+                                                if badgeslist.contains(where: {$0 as! String == "journal"}) {
+                                                    print("none")
+                                                } else {
+                                                    badgeslist.append("journal")
+                                                    UserDefaults.standard.set(badgeslist, forKey: "badges")
+                                                }
                                                 entrySections.saveEntrySections()
+                                                
                                                 isOn = false
                                             }
                                         }
@@ -163,18 +175,44 @@ struct CreateEntryView: View {
                             
                         }
                     } else if presentStage == 0 {
-                        Text("Good Morning, John! \n How are you feeling?")
+                        Text("Hi, \(userModel.username ?? "User")! \n How are you feeling?")
                             .customFont(.title2, fontSize: 24)
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)
                         ZStack {
                             WaveShapeView(progress: $progress)
+                            if progress > 0.8 {
+                                Image("VeryHappySlider")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                    .scaleEffect(3.5)
+                                    .allowsHitTesting(false)
+                            } else if progress > 0.6 {
+                                Image("HappySlider")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                    .scaleEffect(3.5)
+                                    .allowsHitTesting(false)
+                            } else if progress > 0.4 {
+                                Image("MediumSlider")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                    .scaleEffect(3.5)
+                                    .allowsHitTesting(false)
+                            } else if progress > 0.2 {
+                                Image("MehSlider")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                    .scaleEffect(3.5)
+                                    .allowsHitTesting(false)
+                            } else if progress > 0.0 {
+                                Image("SadSlider")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                    .scaleEffect(3.5)
+                                    .allowsHitTesting(false)
+                            }
                             
-                            Image("test")
-                                .resizable()
-                                .frame(width: 80, height: 80)
-                                .scaleEffect(3.5)
-                                .allowsHitTesting(false)
                             
                         }
                         
@@ -195,11 +233,18 @@ struct CreateEntryView: View {
                         .padding(40)
                         
                     } else if presentStage == 1 {
+                        if progress > 0.5 {
+                            Text("That's great to hear! \n Whats making your day really great?")
+                                .customFont(.title2, fontSize: 24)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.white)
+                        } else {
+                            Text("I'm so sorry about that, \n Whats making your day bad?")
+                                .customFont(.title2, fontSize: 24)
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.white)
+                        }
                         
-                        Text("That's great to hear! \n Whats making your day really great?")
-                            .customFont(.title2, fontSize: 24)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.white)
                         
                         GeometryReader { geometry in
                             
@@ -675,7 +720,13 @@ struct CreateEntryView: View {
                                     print(entrySections)
 
                                     entrySections.saveEntrySections()
-
+                                    var badgeslist = UserDefaults.standard.array(forKey: "badges") ?? []
+                                    if badgeslist.contains(where: {$0 as! String == "journal"}) {
+                                        print("none")
+                                    } else {
+                                        badgeslist.append("journal")
+                                        UserDefaults.standard.set(badgeslist, forKey: "badges")
+                                    }
                                     isOn = false
                                 }
                             }) {
@@ -751,7 +802,15 @@ struct CreateEntryView: View {
                                     
                                     print(entrySections)
                                     entrySections.saveEntrySections()
-
+                                    var badgeslist = UserDefaults.standard.array(forKey: "badges") ?? []
+                                    if badgeslist.contains(where: {$0 as! String == "journal"}) {
+                                        print("none")
+                                    } else {
+                                        badgeslist.append("journal")
+                                        UserDefaults.standard.set(badgeslist, forKey: "badges")
+                                    }
+                                    
+                                    
                                     
                                     isOn = false
                                 }

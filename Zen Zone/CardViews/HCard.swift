@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HCard: View {
     @State private var isPresenting = false
-    
-    var activity: activitySection
+    @Binding var activitySections: [ActivitySection]
+    var activity: ActivitySection
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -20,11 +20,9 @@ struct HCard: View {
             Text(activity.caption)
                 .customFont(.subheadline, fontSize: 15)
                 .opacity(0.7)
+            
             Text("\(activity.points) Point - \(activity.type) activity")
                 .customFont(.footnote2, fontSize: 13)
-        }
-        .onTapGesture {
-            isPresenting.toggle()
         }
         .foregroundColor(.white)
         .padding(30)
@@ -40,15 +38,11 @@ struct HCard: View {
                 .padding(20)
             
         )
+        .onTapGesture {
+            isPresenting.toggle()
+        }
         .fullScreenCover(isPresented: $isPresenting) {
-            ActivityView(activity: activity, isPresenting: $isPresenting)
+            ActivityView(activity: activity, isPresenting: $isPresenting, activityArray: $activitySections)
         }
     }
 }
-    
-struct HCard_Previews: PreviewProvider {
-    static var previews: some View {
-        HCard(activity: activities[0])
-    }
-}
-    

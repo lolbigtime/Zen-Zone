@@ -62,8 +62,7 @@ struct JCard: View {
             VStack(alignment: .leading, spacing: 0) {
                 Text(getDateString(from: savedEntries.entrySections[sectionIndex].date))
                     .customFont(.title2, fontSize: 20)
-                    .opacity(savedEntries.entrySections[sectionIndex].date == dateComponentsNow ? 1 : 0)
-                    .frame(maxHeight: savedEntries.entrySections[sectionIndex].date == dateComponentsNow ? 30 : 0)
+                    .frame(maxHeight: 30)
                 Text(abDay(dc: savedEntries.entrySections[sectionIndex].date))
                     .customFont(.subheadline2, fontSize: 10)
                     .foregroundColor(.black.opacity(0.7))

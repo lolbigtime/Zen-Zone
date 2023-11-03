@@ -8,9 +8,11 @@
 import SwiftUI
 import Foundation
 
-struct HomeView: View {
-    var weeklies = activities.filter { $0.type == "Weekly" }
-    var dailies = activities.filter { $0.type == "Daily" }
+struct HomeView: View {    
+    @State var weeklies = activityManager.shared.activities.filter { $0.type == "Weekly" }
+    @State var dailies = activityManager.shared.activities.filter { $0.type == "Daily" }
+    @State var activities = activityManager.shared.activities
+    
     @AppStorage("Points") var points = UserDefaults.standard.integer(forKey: "Points")
     
     var body: some View {
@@ -44,7 +46,10 @@ struct HomeView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(options) { option in CCard(option: option)}
+                    ForEach(options) { option in
+                        CCard(option: option, activitySections: $activities)
+                    }
+                    
                 }
                 .padding(.leading, 20)
                 .padding(.bottom, 10)
@@ -56,7 +61,7 @@ struct HomeView: View {
                 .padding(.horizontal, 20)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(weeklies, id: \.id) { activity in HCard(activity:activity)}
+                    ForEach(weeklies, id: \.id) { activity in HCard(activitySections: $weeklies, activity:activity)}
                 }
                 
                 .padding(.top, 10)
@@ -71,11 +76,11 @@ struct HomeView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(dailies, id: \.id) { activity in
-                        VCard(activity: activity)}
-                            .padding(20)
-                            .padding(.bottom, 10)
-            
+                        VCard(activitySections: $dailies, activity: activity)}
+                            
                     }
+                    .padding(.bottom, 10)
+                    .padding(20)
                 }
             }
         }

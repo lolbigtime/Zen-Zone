@@ -111,6 +111,7 @@ struct WelcomeView: View {
                         .disableAutocorrection(true)
                         .border(.secondary)
                         .foregroundColor(.white)
+                        .cornerRadius(5, corners: .allCorners)
                         Spacer()
                         
                         Button(action: {

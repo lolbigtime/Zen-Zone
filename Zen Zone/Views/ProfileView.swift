@@ -16,6 +16,9 @@ struct ProfileView: View {
     @EnvironmentObject var isBottomSheetManager: SheetManager
     @State var isLoading = false
     
+    @State var badgeslist = UserDefaults.standard.array(forKey: "badges") ?? []
+    var badges = [Badge(name: "Activity Badge", image: "activitybadge", caption: "Complete 10 activities"), Badge(name: "Journal Badge", image: "journalbadge", caption: "Write your first entry"), Badge(name: "Daily streak badge", image: "streak1badge", caption: "Login for 2 days in a row"), Badge(name: "Weekly streak badge", image: "weeklybadge", caption: "Login for a week")]
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -97,7 +100,7 @@ struct ProfileView: View {
                                             .customFont(.caption, fontSize: 12)
                                     }
                                     VStack {
-                                        Text(String(userModel.banners.count))
+                                        Text(String(badgeslist.count))
                                             .customFont(.title2, fontSize: 24)
                                         Text("Banners")
                                             .customFont(.caption, fontSize: 12)
@@ -152,6 +155,38 @@ struct ProfileView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal, 20)
                         
+                        ScrollView(.horizontal) {
+                            HStack(spacing: 10) {
+                                ForEach(badges.indices, id: \.self) { item in
+                                    VStack(alignment: .center) {
+                                        Image(badges[item].image)
+                                            .resizable()
+                                            .frame(width: 100, height: 100)
+                                        Text(badges[item].name)
+                                            .customFont(.subheadline2, fontSize: 16)
+                                        Text(badges[item].caption)
+                                            .multilineTextAlignment(.center)
+                                            .lineLimit(3)
+                                            .frame(width: 150)
+                                            .fixedSize()
+                                        if badgeslist.contains(where: { $0 as! String == badges[item].name}) {
+                                            Text("Obtained :)")
+                                                .customFont(.subheadline2, fontSize: 16)
+
+                                        }
+                                        
+                                        
+                                        Spacer()
+
+                                    }
+                
+                                    .frame(height: 300)
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                        
+                        
                     }
                     
                 }
@@ -183,7 +218,12 @@ struct ProfileView: View {
             }
         }
         .ignoresSafeArea()
+        .onAppear {
+            badgeslist = UserDefaults.standard.array(forKey: "badges") ?? []
+            userModel.loadBannersFromUserDefaults()
+        }
     }
+    
     
     private var darkOverlay: some View {
         Color(.black)
@@ -195,4 +235,10 @@ struct ProfileView: View {
 #Preview {
     ProfileView(quoteModel: QuoteModel(), userModel: UserModel())
         .environmentObject(SheetManager())
+}
+
+struct Badge {
+    var name: String
+    var image: String
+    var caption: String
 }

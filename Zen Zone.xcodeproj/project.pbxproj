@@ -46,14 +46,31 @@
 		43272F2429BDDC7100E5CC76 /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2329BDDC7100E5CC76 /* Statistic.swift */; };
 		43272F2629BF01A200E5CC76 /* JCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2529BF01A200E5CC76 /* JCard.swift */; };
 		43272F2829BF027D00E5CC76 /* EntryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43272F2729BF027D00E5CC76 /* EntryItem.swift */; };
+		4334103B2AE916F60014464E /* Beats.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4334103A2AE916EC0014464E /* Beats.wav */; };
+		4334103C2AE916F90014464E /* Default - System.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433410342AE916EC0014464E /* Default - System.wav */; };
+		4334103D2AE916FB0014464E /* End.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433410392AE916EC0014464E /* End.wav */; };
+		4334103E2AE916FD0014464E /* Focused.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433410362AE916EC0014464E /* Focused.wav */; };
+		4334103F2AE917010014464E /* Playful.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433410372AE916EC0014464E /* Playful.wav */; };
+		433410402AE917030014464E /* Soundtrack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433410382AE916EC0014464E /* Soundtrack.wav */; };
+		433410412AE917050014464E /* Waves.wav in Resources */ = {isa = PBXBuildFile; fileRef = 433410352AE916EC0014464E /* Waves.wav */; };
 		4335B2882A41A59400775C17 /* CreateEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335B2872A41A59400775C17 /* CreateEntryView.swift */; };
 		43573E9B2ACC80CB005D92A8 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43573E9A2ACC80CB005D92A8 /* BadgeView.swift */; };
 		43573E9D2ACC8694005D92A8 /* BadgeSegments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43573E9C2ACC8694005D92A8 /* BadgeSegments.swift */; };
 		435CBD072AA71DEF00B1BA7D /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435CBD062AA71DEF00B1BA7D /* EntryView.swift */; };
+		4369DCB52ADEDB4400AC9E7E /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369DCB42ADEDB4300AC9E7E /* StoreView.swift */; };
+		4369DCBB2ADEDBE500AC9E7E /* StoreItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4369DCBA2ADEDBE500AC9E7E /* StoreItems.swift */; };
 		4371498D2A42F6AC00B3C9DE /* SButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4371498C2A42F6AC00B3C9DE /* SButtonView.swift */; };
 		437149912A44177D00B3C9DE /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437149902A44177D00B3C9DE /* WaveShape.swift */; };
 		437472A32A56AFFA0008CD6F /* ECard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437472A22A56AFFA0008CD6F /* ECard.swift */; };
+		437875592AE4A55A00746B53 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437875582AE4A55A00746B53 /* CategoryView.swift */; };
+		4378755D2AE6742200746B53 /* SCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378755C2AE6742200746B53 /* SCard.swift */; };
+		4378755F2AE67A5500746B53 /* BCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378755E2AE67A5500746B53 /* BCard.swift */; };
+		437875632AE742FB00746B53 /* Audio Files in Resources */ = {isa = PBXBuildFile; fileRef = 437875622AE742FB00746B53 /* Audio Files */; };
+		437875652AE743BF00746B53 /* UCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437875642AE743BF00746B53 /* UCard.swift */; };
+		437875672AE9113800746B53 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437875662AE9113800746B53 /* ItemView.swift */; };
+		437875692AE911A400746B53 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437875682AE911A400746B53 /* AudioPlayer.swift */; };
 		438CAD522A72616000B3532B /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438CAD512A72616000B3532B /* ActivityView.swift */; };
+		43A824502AD9E00200E93B5D /* PanicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A8244F2AD9E00200E93B5D /* PanicView.swift */; };
 		43BBC49C2ABA122000068ADC /* gptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBC49B2ABA122000068ADC /* gptModel.swift */; };
 		43BBC49E2ABBF80B00068ADC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBC49D2ABBF80B00068ADC /* ProfileView.swift */; };
 		43BBC4A12ABDF29900068ADC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 43BBC4A02ABDF29900068ADC /* Kingfisher */; };
@@ -63,6 +80,9 @@
 		43E2A40F2ACDCCF700437770 /* SheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2A40E2ACDCCF700437770 /* SheetManager.swift */; };
 		43E2A4112ACF24ED00437770 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2A4102ACF24ED00437770 /* UserModel.swift */; };
 		43E2A4132AD2447200437770 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2A4122AD2447200437770 /* LoadingView.swift */; };
+		43E2A41C2AD6813900437770 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2A41B2AD6813900437770 /* WelcomeView.swift */; };
+		43E2A41F2AD690AD00437770 /* ChatGPTSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 43E2A41E2AD690AD00437770 /* ChatGPTSwift */; };
+		43E2A4212AD6914500437770 /* MessagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2A4202AD6914500437770 /* MessagesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,14 +126,31 @@
 		43272F2329BDDC7100E5CC76 /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
 		43272F2529BF01A200E5CC76 /* JCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCard.swift; sourceTree = "<group>"; };
 		43272F2729BF027D00E5CC76 /* EntryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryItem.swift; sourceTree = "<group>"; };
+		433410342AE916EC0014464E /* Default - System.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Default - System.wav"; sourceTree = "<group>"; };
+		433410352AE916EC0014464E /* Waves.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Waves.wav; sourceTree = "<group>"; };
+		433410362AE916EC0014464E /* Focused.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Focused.wav; sourceTree = "<group>"; };
+		433410372AE916EC0014464E /* Playful.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Playful.wav; sourceTree = "<group>"; };
+		433410382AE916EC0014464E /* Soundtrack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Soundtrack.wav; sourceTree = "<group>"; };
+		433410392AE916EC0014464E /* End.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = End.wav; sourceTree = "<group>"; };
+		4334103A2AE916EC0014464E /* Beats.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Beats.wav; sourceTree = "<group>"; };
 		4335B2872A41A59400775C17 /* CreateEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEntryView.swift; sourceTree = "<group>"; };
 		43573E9A2ACC80CB005D92A8 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		43573E9C2ACC8694005D92A8 /* BadgeSegments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSegments.swift; sourceTree = "<group>"; };
 		435CBD062AA71DEF00B1BA7D /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
+		4369DCB42ADEDB4300AC9E7E /* StoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		4369DCBA2ADEDBE500AC9E7E /* StoreItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreItems.swift; sourceTree = "<group>"; };
 		4371498C2A42F6AC00B3C9DE /* SButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SButtonView.swift; sourceTree = "<group>"; };
 		437149902A44177D00B3C9DE /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
 		437472A22A56AFFA0008CD6F /* ECard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECard.swift; sourceTree = "<group>"; };
+		437875582AE4A55A00746B53 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		4378755C2AE6742200746B53 /* SCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCard.swift; sourceTree = "<group>"; };
+		4378755E2AE67A5500746B53 /* BCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCard.swift; sourceTree = "<group>"; };
+		437875622AE742FB00746B53 /* Audio Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Audio Files"; sourceTree = "<group>"; };
+		437875642AE743BF00746B53 /* UCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCard.swift; sourceTree = "<group>"; };
+		437875662AE9113800746B53 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		437875682AE911A400746B53 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		438CAD512A72616000B3532B /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		43A8244F2AD9E00200E93B5D /* PanicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanicView.swift; sourceTree = "<group>"; };
 		43BBC49B2ABA122000068ADC /* gptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gptModel.swift; sourceTree = "<group>"; };
 		43BBC49D2ABBF80B00068ADC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		43BBC4A22ABDFD4A00068ADC /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
@@ -122,6 +159,8 @@
 		43E2A40E2ACDCCF700437770 /* SheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetManager.swift; sourceTree = "<group>"; };
 		43E2A4102ACF24ED00437770 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		43E2A4122AD2447200437770 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		43E2A41B2AD6813900437770 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		43E2A4202AD6914500437770 /* MessagesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43BBC4A12ABDF29900068ADC /* Kingfisher in Frameworks */,
+				43E2A41F2AD690AD00437770 /* ChatGPTSwift in Frameworks */,
 				43272EFC29B9E2B500E5CC76 /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,9 +196,17 @@
 		43272ED029B9DD7E00E5CC76 /* Zen Zone */ = {
 			isa = PBXGroup;
 			children = (
+				4334103A2AE916EC0014464E /* Beats.wav */,
+				433410342AE916EC0014464E /* Default - System.wav */,
+				433410392AE916EC0014464E /* End.wav */,
+				433410362AE916EC0014464E /* Focused.wav */,
+				433410372AE916EC0014464E /* Playful.wav */,
+				433410382AE916EC0014464E /* Soundtrack.wav */,
+				433410352AE916EC0014464E /* Waves.wav */,
 				43272F0F29BC8B1100E5CC76 /* Zen-Zone-Info.plist */,
 				43272ED129B9DD7E00E5CC76 /* Zen_ZoneApp.swift */,
 				4371498E2A44171000B3C9DE /* Views */,
+				437875622AE742FB00746B53 /* Audio Files */,
 				43272F0229BC86FD00E5CC76 /* CardViews */,
 				4371498F2A44174100B3C9DE /* Geometry */,
 				43272F0529BC887F00E5CC76 /* Models */,
@@ -214,9 +262,12 @@
 				43272F1D29BD4EE900E5CC76 /* CCard.swift */,
 				43272F0329BC870A00E5CC76 /* VCard.swift */,
 				43272F1B29BD46BF00E5CC76 /* HCard.swift */,
+				4378755C2AE6742200746B53 /* SCard.swift */,
+				4378755E2AE67A5500746B53 /* BCard.swift */,
 				43272F2529BF01A200E5CC76 /* JCard.swift */,
 				437472A22A56AFFA0008CD6F /* ECard.swift */,
 				430286AA2AB067950068AE30 /* MCard.swift */,
+				437875642AE743BF00746B53 /* UCard.swift */,
 			);
 			path = CardViews;
 			sourceTree = "<group>";
@@ -224,6 +275,7 @@
 		43272F0529BC887F00E5CC76 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4369DCBA2ADEDBE500AC9E7E /* StoreItems.swift */,
 				43272F0629BC895C00E5CC76 /* ActivitySection.swift */,
 				43E2A4102ACF24ED00437770 /* UserModel.swift */,
 				43272F1F29BD502900E5CC76 /* ActivityOption.swift */,
@@ -232,6 +284,8 @@
 				430286A82AB065E90068AE30 /* Message.swift */,
 				43BBC49B2ABA122000068ADC /* gptModel.swift */,
 				43BBC4A22ABDFD4A00068ADC /* QuoteModel.swift */,
+				43E2A4202AD6914500437770 /* MessagesManager.swift */,
+				437875682AE911A400746B53 /* AudioPlayer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,14 +317,19 @@
 		4371498E2A44171000B3C9DE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				43E2A41B2AD6813900437770 /* WelcomeView.swift */,
 				43272ED329B9DD7E00E5CC76 /* ContentView.swift */,
 				43272F0029BC854300E5CC76 /* HomeView.swift */,
+				437875582AE4A55A00746B53 /* CategoryView.swift */,
+				438CAD512A72616000B3532B /* ActivityView.swift */,
 				43272F2129BDD7F200E5CC76 /* JournalView.swift */,
 				4335B2872A41A59400775C17 /* CreateEntryView.swift */,
-				438CAD512A72616000B3532B /* ActivityView.swift */,
 				435CBD062AA71DEF00B1BA7D /* EntryView.swift */,
 				43BBC49D2ABBF80B00068ADC /* ProfileView.swift */,
 				430286A62AB05CF20068AE30 /* ChatView.swift */,
+				43A8244F2AD9E00200E93B5D /* PanicView.swift */,
+				4369DCB42ADEDB4300AC9E7E /* StoreView.swift */,
+				437875662AE9113800746B53 /* ItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,6 +365,7 @@
 			packageProductDependencies = (
 				43272EFB29B9E2B500E5CC76 /* RiveRuntime */,
 				43BBC4A02ABDF29900068ADC /* Kingfisher */,
+				43E2A41E2AD690AD00437770 /* ChatGPTSwift */,
 			);
 			productName = "Zen Zone";
 			productReference = 43272ECE29B9DD7E00E5CC76 /* Zen Zone.app */;
@@ -338,6 +398,7 @@
 			packageReferences = (
 				43272EFA29B9E2B500E5CC76 /* XCRemoteSwiftPackageReference "rive-ios" */,
 				43BBC49F2ABDF29900068ADC /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				43E2A41D2AD690AD00437770 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */,
 			);
 			productRefGroup = 43272ECF29B9DD7E00E5CC76 /* Products */;
 			projectDirPath = "";
@@ -353,12 +414,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433410412AE917050014464E /* Waves.wav in Resources */,
+				4334103E2AE916FD0014464E /* Focused.wav in Resources */,
 				43272F0E29BC8ADB00E5CC76 /* Inter-SemiBold.ttf in Resources */,
 				43272EF529B9DF1B00E5CC76 /* shapes.riv in Resources */,
 				43272EF329B9DF1B00E5CC76 /* check.riv in Resources */,
+				433410402AE917030014464E /* Soundtrack.wav in Resources */,
 				43272ED929B9DD7F00E5CC76 /* Preview Assets.xcassets in Resources */,
 				43272EF429B9DF1B00E5CC76 /* menu_button.riv in Resources */,
 				43272EF129B9DF1B00E5CC76 /* house.riv in Resources */,
+				437875632AE742FB00746B53 /* Audio Files in Resources */,
+				4334103C2AE916F90014464E /* Default - System.wav in Resources */,
+				4334103F2AE917010014464E /* Playful.wav in Resources */,
+				4334103B2AE916F60014464E /* Beats.wav in Resources */,
+				4334103D2AE916FB0014464E /* End.wav in Resources */,
 				43272EF629B9DF1B00E5CC76 /* button.riv in Resources */,
 				43272F0C29BC8ADB00E5CC76 /* Inter-Regular.ttf in Resources */,
 				43272F0D29BC8ADB00E5CC76 /* Poppins-Bold.ttf in Resources */,
@@ -386,26 +455,36 @@
 				430286A92AB065E90068AE30 /* Message.swift in Sources */,
 				430286A72AB05CF20068AE30 /* ChatView.swift in Sources */,
 				43272F0429BC870A00E5CC76 /* VCard.swift in Sources */,
+				4369DCBB2ADEDBE500AC9E7E /* StoreItems.swift in Sources */,
+				437875692AE911A400746B53 /* AudioPlayer.swift in Sources */,
 				43272F2429BDDC7100E5CC76 /* Statistic.swift in Sources */,
 				43272EDB29B9DD7F00E5CC76 /* Persistence.swift in Sources */,
+				43E2A4212AD6914500437770 /* MessagesManager.swift in Sources */,
 				43272F2229BDD7F200E5CC76 /* JournalView.swift in Sources */,
+				43E2A41C2AD6813900437770 /* WelcomeView.swift in Sources */,
+				437875592AE4A55A00746B53 /* CategoryView.swift in Sources */,
 				43272F0729BC895C00E5CC76 /* ActivitySection.swift in Sources */,
 				43272EFE29BB3BE500E5CC76 /* MenuRow.swift in Sources */,
 				43272F2629BF01A200E5CC76 /* JCard.swift in Sources */,
 				4335B2882A41A59400775C17 /* CreateEntryView.swift in Sources */,
+				4378755F2AE67A5500746B53 /* BCard.swift in Sources */,
 				43272F2829BF027D00E5CC76 /* EntryItem.swift in Sources */,
 				43E2A4112ACF24ED00437770 /* UserModel.swift in Sources */,
 				430286AF2AB373CC0068AE30 /* DotLoadingView.swift in Sources */,
 				43272EDE29B9DD7F00E5CC76 /* Zen_Zone.xcdatamodeld in Sources */,
 				4371498D2A42F6AC00B3C9DE /* SButtonView.swift in Sources */,
+				43A824502AD9E00200E93B5D /* PanicView.swift in Sources */,
 				430286AB2AB067950068AE30 /* MCard.swift in Sources */,
 				43BBC4A32ABDFD4A00068ADC /* QuoteModel.swift in Sources */,
 				438CAD522A72616000B3532B /* ActivityView.swift in Sources */,
+				437875672AE9113800746B53 /* ItemView.swift in Sources */,
 				43272F2029BD502900E5CC76 /* ActivityOption.swift in Sources */,
 				43E2A4132AD2447200437770 /* LoadingView.swift in Sources */,
 				43272ED429B9DD7E00E5CC76 /* ContentView.swift in Sources */,
 				43573E9B2ACC80CB005D92A8 /* BadgeView.swift in Sources */,
 				43272EF929B9E08C00E5CC76 /* SideMenu.swift in Sources */,
+				4378755D2AE6742200746B53 /* SCard.swift in Sources */,
+				437875652AE743BF00746B53 /* UCard.swift in Sources */,
 				43272F1829BC8C2900E5CC76 /* Extensions.swift in Sources */,
 				43272F1729BC8C2900E5CC76 /* CustomButton.swift in Sources */,
 				43BBC49E2ABBF80B00068ADC /* ProfileView.swift in Sources */,
@@ -416,6 +495,7 @@
 				43272EE829B9DED000E5CC76 /* TabBar.swift in Sources */,
 				435CBD072AA71DEF00B1BA7D /* EntryView.swift in Sources */,
 				430286AD2AB1B5FB0068AE30 /* UIComponents.swift in Sources */,
+				4369DCB52ADEDB4400AC9E7E /* StoreView.swift in Sources */,
 				43E2A40D2ACD6CF600437770 /* BottomMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,17 +623,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Zen Zone/Preview Content\"";
 				DEVELOPMENT_TEAM = 487H2S9ZW9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Zen-Zone-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Zen Zone";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -574,17 +659,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Zen Zone/Preview Content\"";
 				DEVELOPMENT_TEAM = 487H2S9ZW9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Zen-Zone-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Zen Zone";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -639,6 +729,14 @@
 				minimumVersion = 7.9.1;
 			};
 		};
+		43E2A41D2AD690AD00437770 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/ChatGPTSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -651,6 +749,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 43BBC49F2ABDF29900068ADC /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		43E2A41E2AD690AD00437770 /* ChatGPTSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43E2A41D2AD690AD00437770 /* XCRemoteSwiftPackageReference "ChatGPTSwift" */;
+			productName = ChatGPTSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -6,55 +6,69 @@
 //
 
 import SwiftUI
+import ChatGPTSwift
 
 struct ChatView: View {
     @State var messageText: String = ""
-    @State var messages: [Message] = [Message(text: "Hi, how can I help you?", user: false, loading: true)]
+    @State var messages: [Message] = [Message(text: "Hi, who are you?", user: false, loading: true)]
     @State var bottomPadding: CGFloat = 30
+    @State var panic: Bool = false
+    
     func createText(text: String, user: Bool, loading: Bool) {
         let message = Message(text: text, user: user, loading: loading)
         messages.append(message)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            let aimessage = Message(text: text, user: false, loading: true)
+            messages.append(aimessage)
+        }
     }
     
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .bottom) {
                 Color("Background").ignoresSafeArea()
-                ScrollViewReader { proxy in
-                    ScrollView {
-                        VStack(spacing: 10) {
-                            ForEach(messages.indices, id: \.self) { index in
-                                MCard(maxWidth: geo.size.width / 1.8, message: messages[index])
-                                    
+                VStack(spacing: 10) {
+                    ScrollViewReader { proxy in
+                        ScrollView {
+                            VStack(spacing: 10) {
+                                ForEach(messages.indices, id: \.self) { index in
+                                    MCard(maxWidth: geo.size.width / 1.8, message: messages[index])
+                                        
+                                }
+                                
                             }
-                            
-                        }
 
-                    }
-                    .onChange(of: messages) { id in
-                        // When the lastMessageId changes, scroll to the bottom of the conversation
-                        withAnimation {
-                            proxy.scrollTo(id, anchor: .bottom)
+                        }
+                        .onChange(of: messages) { id in
+                            // When the lastMessageId changes, scroll to the bottom of the conversation
+                            withAnimation {
+                                proxy.scrollTo(id, anchor: .bottom)
+                            }
                         }
                     }
+                    .scrollIndicators(.hidden, axes: .vertical)
+
+                    
+                    textBox
+                        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
+                            withAnimation {
+                                bottomPadding = (geo.size.height / 3) + 35
+                            }
+                        }
+                        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+                            withAnimation {
+                                bottomPadding = 35
+                            }
+                        }
+                        .padding(.bottom, bottomPadding)
                 }
-                .padding()
+                .padding(.bottom, 20)
                 
-
-                
-                textBox
-                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
-                        withAnimation {
-                            bottomPadding = (geo.size.height / 3) + 30
-                        }
-                    }
-                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
-                        withAnimation {
-                            bottomPadding = 30
-                        }
-                    }
-                    .padding(.bottom, bottomPadding)
             }
+        }
+        .sheet(isPresented: $panic) {
+            PanicView()
         }
     }
     
@@ -74,8 +88,13 @@ struct ChatView: View {
             .accentColor(Color.white)
             
             Button(action: {
-                createText(text: messageText, user: true, loading: false)
-                messageText = ""
+                if messageText == "HELP" {
+                    panic = true
+                } else {
+                    createText(text: messageText, user: true, loading: false)
+                    messageText = ""
+                }
+                
             }) {
                 ZStack {
                     Circle()
@@ -90,10 +109,6 @@ struct ChatView: View {
 
             
         }
-        .padding()
+        .padding(.horizontal)
     }
-}
-
-#Preview {
-    ChatView(messages: [Message(text: "dijdnsijnijnijnijninijdnsijndijsndijsndijsnidnsijdnsijdnsijdnsijndsijn", user: true, loading: false), Message(text: "dijdnsijnijnijnijninijdnsijndijsndijsndijsnidnsijdnsijdnsijdnsijndsijn", user: true, loading: false), Message(text: "dijdnsidnsijdsijndijdnsidnsijdsijndijdnsidnsijdsijndijdnsidnsijdsijndijdnsidnsijdsijn", user: false, loading: true)])
 }
