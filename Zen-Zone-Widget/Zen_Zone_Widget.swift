@@ -12,11 +12,11 @@ struct Provider: TimelineProvider {
    
 
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+        SimpleEntry(date: Date(), title: "Practicing Gratitude", type: "Weekly")
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+        let entry = SimpleEntry(date: Date(), title: "Practicing Gratitude", type: "Weekly")
         completion(entry)
     }
 
@@ -25,9 +25,9 @@ struct Provider: TimelineProvider {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
+        for hourOffset in 0 ..< 2 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
+            let entry = SimpleEntry(date: entryDate, title: "Practicing Gratitude", type: "Weekly")
             entries.append(entry)
         }
 
@@ -37,21 +37,21 @@ struct Provider: TimelineProvider {
 }
 
 struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let emoji: String
+    var date: Date
+    let title: String
+    let type: String
 }
 
 struct Zen_Zone_WidgetEntryView : View {
-    var activity: activitySection
     var entry: Provider.Entry
     var body: some View {
             VStack (alignment: .leading, spacing: 8){
-                Text(activity.title)
+                Text(entry.title)
                     .font(.largeTitle)
                     .frame(maxWidth: 210, alignment: .leading)
                 HStack{
                     Text("Activity Type: ")
-                    Text(activity.type)
+                    Text(entry.type)
                 }
 
             }
@@ -71,33 +71,20 @@ struct Zen_Zone_Widget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            Zen_Zone_WidgetEntryView(activity: activities[0], entry: entry)
+            Zen_Zone_WidgetEntryView(entry: entry)
                 .padding()
                 .background(Color.clear) // Use the appropriate background color
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Zen Zone Widget")
+        .description("Add this Widget to your phone for a reminder to take some time for your own mental health!")
     }
 }
-struct activitySection: Identifiable {
-    var id = UUID()
-    var title: String
-    var points: Int
-    var caption: String
-    var type: String
 
-}
-
-var activities = [
-    activitySection(title: "Practicing Gratitude", points: 3, caption: "One activity that can help improve your mental health is practicing gratitude. Taking a few minutes each day to reflect on the things you are grateful for can help shift your focus to positive experiences and promote a more optimistic outlook.", type: "Weekly"),
-    activitySection(title: "Practicing Gratitude", points: 3, caption: "One activity that can help improve your mental health is practicing gratitude. Taking a few minutes each day to reflect on the things you are grateful for can help shift your focus to positive experiences and promote a more optimistic outlook.", type: "Weekly"),
-    activitySection(title: "Mindful Breathing", points: 1, caption: "Practice mindful breathing. This simple practice can help promote relaxation, reduce stress, and improve overall well-being. Encourage yourself to practice mindful breathing whenever you feel overwhelmed or need a quick break during the day.", type: "Daily")
-]
 
 
 #Preview(as: .systemSmall) {
     Zen_Zone_Widget()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    SimpleEntry(date: .now, title: "Practicing Gratitude", type: "Weekly")
+    SimpleEntry(date: .now, title: "Mindful Breathing", type: "Daily")
 }
